@@ -1,0 +1,6 @@
+[submodule "componet/HTTPParser"]
+	path = componet/HTTPParser
+	url = https://github.com/Yhgenomics/HTTPParser.git
+[submodule "componet/UUID"]
+	path = componet/UUID
+	url = https://github.com/Yhgenomics/UUID.git

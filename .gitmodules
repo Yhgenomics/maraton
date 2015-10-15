@@ -1,12 +1,3 @@
-[submodule "componet/HTTPParser"]
-	path = componet/HTTPParser
-	url = https://github.com/Yhgenomics/HTTPParser.git
-[submodule "componet/UUID"]
-	path = componet/UUID
-	url = https://github.com/Yhgenomics/UUID.git
-[submodule "componet/json"]
-	path = componet/json
-	url = https://github.com/Yhgenomics/json.git
 [submodule "componet/libuv"]
 	path = componet/libuv
 	url = https://github.com/Yhgenomics/libuv.git

@@ -4,12 +4,3 @@
 [submodule "componet/UUID"]
 	path = componet/UUID
 	url = https://github.com/Yhgenomics/UUID.git
-[submodule "libuv"]
-	path = libuv
-	url = https://github.com/Yhgenomics/libuv.git
-[submodule "json"]
-	path = json
-	url = https://github.com/Yhgenomics/json.git
-[submodule "componet/libuv"]
-	path = componet/libuv
-	url = https://github.com/Yhgenomics/libuv.git

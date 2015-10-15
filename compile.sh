@@ -1,7 +1,7 @@
 #!/bin/sh
 cd src
 rm -rf cmakebuild/
-CMaker project:maraton ft:*.h,*.cpp,*.hpp,*.cc,*.c flag:-Wall-std=c++11-pthread
+CMaker project:maraton head:*.h,*.hpp src:*.cpp,*.hpp,*.cc,*.c flag:-Wall-std=c++11-pthread lib:../lib/libuv.a
 cd cmakebuild
 cmake .
 make

@@ -58,8 +58,13 @@ public:
         string head = "";
 
         head += "HTTP/1.0 "+ this->status_description( this->status_ ) + "\r\n";
-
+#ifdef WIN32
         sprintf_s( buffer, sizeof(buffer), "%d", this->content_len_ );
+#else
+        snprintf( buffer , sizeof(buffer), "%d", this->content_len_);
+#endif
+        
+        
         header_["Content-Length"] = buffer;
 
         for ( auto kv : header_ )

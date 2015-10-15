@@ -56,6 +56,7 @@ SOFTWARE.
 #include <type_traits>
 #include <utility>
 #include <vector>
+#include <stdio.h>
 
 // enable ssize_t on MinGW
 #ifdef __GNUC__
@@ -4678,7 +4679,11 @@ namespace nlohmann
                     if ( c >= 0x00 and c <= 0x1f )
                     {
                         // print character c as \uxxxx
+#ifdef WIN32
                         sprintf_s( &result[pos + 1], result.size(), "u%04x", int( c ) );
+#else
+                        snprintf( &result[pos + 1], result.size(), "u%04x", int( c ) );
+#endif
                         pos += 6;
                         // overwrite trailing null character
                         result[pos] = '\\';

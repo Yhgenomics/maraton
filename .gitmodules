@@ -10,3 +10,6 @@
 [submodule "componet/libuv"]
 	path = componet/libuv
 	url = https://github.com/Yhgenomics/libuv.git
+[submodule "componet/cmaker"]
+	path = componet/cmaker
+	url = https://github.com/Yhgenomics/cmaker.git

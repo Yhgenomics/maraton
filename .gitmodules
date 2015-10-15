@@ -4,3 +4,6 @@
 [submodule "componet/UUID"]
 	path = componet/UUID
 	url = https://github.com/Yhgenomics/UUID.git
+[submodule "componet/json"]
+	path = componet/json
+	url = https://github.com/Yhgenomics/json.git

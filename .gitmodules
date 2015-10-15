@@ -7,3 +7,6 @@
 [submodule "componet/json"]
 	path = componet/json
 	url = https://github.com/Yhgenomics/json.git
+[submodule "componet/libuv"]
+	path = componet/libuv
+	url = https://github.com/Yhgenomics/libuv.git

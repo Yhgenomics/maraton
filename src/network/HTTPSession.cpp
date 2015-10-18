@@ -18,11 +18,9 @@ HTTPSession::HTTPSession( uv_tcp_t* conn )
     this->router_->response( [this] (HTTPResponse* rep) {
 
         int len = 0;
-        const char* data = rep->bytes( &len );
-        this->send( data, len );
+        auto data = rep->bytes();
+        this->send( data.raw, data.length );
         
-        SAFE_DELETE( data );
-
         this->close();
 
     } );

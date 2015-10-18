@@ -74,6 +74,12 @@
     <LibraryPath>../lib;$(LibraryPath)</LibraryPath>
     <ReferencePath>../lib;$(ReferencePath)</ReferencePath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ExecutablePath>../src/utils;../src/thirdpart;../src/http;../src/master;../src/network;../src/include;../src/;$(ExecutablePath)</ExecutablePath>
+    <LibraryPath>../lib/;$(LibraryPath)</LibraryPath>
+    <IncludePath>../src/;../src/utils;../src/thirdpart;../src/network;../src/master;../src/http;../src/executor;../src/include;$(IncludePath)</IncludePath>
+    <ReferencePath>../lib;$(ReferencePath)</ReferencePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -89,10 +95,11 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libuv_x64.lib;advapi32.lib;iphlpapi.lib;psapi.lib;shell32.lib;userenv.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -125,13 +132,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\network\ClusterSession.cpp" />
     <ClCompile Include="..\src\network\HTTPSession.cpp" />
     <ClCompile Include="..\src\network\MasterSession.cpp" />
-    <ClCompile Include="..\src\network\NetworkDataBuilder.cpp" />
     <ClCompile Include="..\src\network\SessionFactory.cpp" />
     <ClCompile Include="..\src\network\Session.cpp" />
     <ClCompile Include="..\src\network\SessionManager.cpp" />
     <ClCompile Include="..\src\network\UVSockService.cpp" />
+    <ClCompile Include="..\src\utils\CircleBuffer.cpp" />
     <ClCompile Include="..\src\utils\ExecutorSession.cpp" />
     <ClCompile Include="..\src\utils\Logger.cpp" />
   </ItemGroup>
@@ -156,19 +164,22 @@
     <ClInclude Include="..\src\include\uv-win.h" />
     <ClInclude Include="..\src\include\uv.h" />
     <ClInclude Include="..\src\maraton.h" />
+    <ClInclude Include="..\src\network\ClusterSession.h" />
     <ClInclude Include="..\src\network\HTTPSession.h" />
     <ClInclude Include="..\src\network\MasterSession.h" />
-    <ClInclude Include="..\src\network\NetworkDataBuilder.h" />
     <ClInclude Include="..\src\network\SessionFactory.h" />
     <ClInclude Include="..\src\network\Session.h" />
     <ClInclude Include="..\src\network\SessionManager.h" />
     <ClInclude Include="..\src\network\UVSockService.h" />
-    <ClInclude Include="..\src\thirdpart\HTTPParser.hpp" />
     <ClInclude Include="..\src\thirdpart\json.hpp" />
     <ClInclude Include="..\src\thirdpart\UUID.hpp" />
+    <ClInclude Include="..\src\utils\Buffer.hpp" />
+    <ClInclude Include="..\src\utils\CircleBuffer.h" />
     <ClInclude Include="..\src\utils\ExecutorSession.h" />
     <ClInclude Include="..\src\utils\Logger.h" />
+    <ClInclude Include="..\src\utils\Macro.h" />
     <ClInclude Include="..\src\utils\Singleton.h" />
+    <ClInclude Include="..\src\utils\Zlib.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,7 @@
 #ifndef HTTP_RESPONSE_H_
 #define HTTP_RESPONSE_H_
 
+#include "Buffer.hpp"
 #include "stdio.h"
 #include <string.h>
 #include <map>
@@ -12,11 +13,8 @@ public:
 
     HTTPResponse()
     {
-        header_["Server"] = "YHGenomics/Maraton";
-        header_["Content-Length"] = "0";
-        header_["Connection"] = "close";
-
-        this->content_ = new char[1024 * 1024];
+        this->content_ = new char[HTTP_RESPONSE_CONTENT_SIZE];
+        this->clear();
     }
 
     ~HTTPResponse()
@@ -41,13 +39,15 @@ public:
         this->content_len_ = len;
     };
 
-    int length() {
-
+    int length() 
+    {
+        return this->content_len_;
     };
 
-    const char* bytes(int* len) {
-
-        char buffer[1024 * 512] = { 0 };
+    Buffer bytes() 
+    {
+        Buffer ret;
+        char* buffer = new char[HTTP_RESPONSE_CONTENT_SIZE];
         string head = "";
         char* p = buffer;
 
@@ -63,19 +63,30 @@ public:
         head += "\r\n";
 
         memcpy( buffer, head.c_str(), head.length() );
-        *len += static_cast< int >( head.length() );
+        ret.length += static_cast< int >( head.length() );
         memcpy( buffer + head.length(), this->content_, this->content_len_ );
-        *len += this->content_len_;
+        ret.length += this->content_len_;
 
-        char* ret = new char[*len];
-        memcpy( ret, buffer, *len );
+        ret.raw = new char[ret.length];
+        memcpy( ret.raw, buffer, ret.length );
+
+        SAFE_DELETE( buffer );
 
         return ret;
     };
 
     void clear()
     {
+        this->header_.clear();
+        header_["Server"] = "YHGenomics/Maraton";
+        header_["Content-Length"] = "0";
+        header_["Connection"] = "close";
 
+        if ( this->content_ == nullptr )
+        {
+            this->content_ = new char[1024 * 1024];
+        }
+        memset( this->content_, 0, 1024 * 1024 );
     };
 
 private:

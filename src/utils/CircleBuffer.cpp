@@ -1,14 +1,14 @@
-#include "NetworkDataBuilder.h"
+#include "CircleBuffer.h"
 #include <memory.h>
 
-NetworkDataBuilder::NetworkDataBuilder()
+CircleBuffer::CircleBuffer()
 {
     this->circle_buffer_ = new char[this->buffer_length_];
     this->available_len_ = this->buffer_length_;
     this->used_len_ = 0;
 }
 
-NetworkDataBuilder::~NetworkDataBuilder()
+CircleBuffer::~CircleBuffer()
 {
     if ( this->circle_buffer_ != nullptr )
     {
@@ -17,11 +17,11 @@ NetworkDataBuilder::~NetworkDataBuilder()
     }
 }
 
-bool NetworkDataBuilder::push( const char * data, int len )
+bool CircleBuffer::push( const char * data, int len )
 {
     if ( available_length() < len )
     {
-        throw "[NetworkDataBuilder.cpp] not enough buffer";
+        throw "[CircleBuffer.cpp] not enough buffer";
         return false;
     }
 
@@ -52,7 +52,7 @@ bool NetworkDataBuilder::push( const char * data, int len )
     return true;
 }
 
-char * NetworkDataBuilder::pop( int len )
+char * CircleBuffer::pop( int len )
 {
     if ( len > this->used_length() )
     {
@@ -88,17 +88,17 @@ char * NetworkDataBuilder::pop( int len )
     return ret;
 }
  
-int NetworkDataBuilder::length()
+int CircleBuffer::length()
 {
     return this->buffer_length_;
 }
 
-int NetworkDataBuilder::used_length()
+int CircleBuffer::used_length()
 {
     return   this->used_len_;
 }
 
-int NetworkDataBuilder::available_length()
+int CircleBuffer::available_length()
 {
     
     return this->available_len_;

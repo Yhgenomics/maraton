@@ -22,6 +22,8 @@ public:
     void push( Session* session );
     void remove( Session* session );
 
+    void run();
+
 private:
 
     friend Singleton<SessionManager>;

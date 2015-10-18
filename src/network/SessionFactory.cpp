@@ -20,6 +20,7 @@ Session * SessionFactory::create( uv_tcp_t* conn , SESSIONTYPE type )
     break;
     }
     
+    return nullptr;
 }
 
 SessionFactory::SessionFactory()

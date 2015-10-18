@@ -55,7 +55,7 @@ bool Core::UVSockService::connect( std::string ip, int port )
 
 void Core::UVSockService::run()
 {
-    uv_run( this->loop_, UV_RUN_ONCE );
+    uv_run( this->loop_, UV_RUN_NOWAIT );
 }
 
 void Core::UVSockService::session_type( SESSIONTYPE type )
@@ -123,7 +123,7 @@ void Core::UVSockService::uv_read_cb_process( uv_stream_t * stream, ssize_t nrea
         return;
     }
 
-    session->on_recv( nread );
+    session->on_recv( static_cast< int >( nread ) );
 }
 
 void Core::UVSockService::uv_close_cb_process( uv_handle_t * handle )

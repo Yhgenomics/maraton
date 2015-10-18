@@ -1,7 +1,8 @@
 #include "ExecutorSession.h"
+#include "json.hpp"
 
 ExecutorSession::ExecutorSession(uv_tcp_t * conn)
-    : Session::Session(conn)
+    : ClusterSession::ClusterSession(conn)
 {
 
 }
@@ -10,10 +11,13 @@ ExecutorSession::~ExecutorSession()
 {
 }
 
-void ExecutorSession::on_recv( int len )
-{
-}
-
 void ExecutorSession::run()
 {
+    ClusterSession::run();
 }
+
+void ExecutorSession::on_data_recv( const Buffer buffer )
+{
+
+}
+ 

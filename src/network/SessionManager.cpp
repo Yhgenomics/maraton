@@ -25,3 +25,11 @@ void SessionManager::remove( Session * session )
 
     SAFE_DELETE( session );
 }
+
+void SessionManager::run()
+{
+    for ( auto s : this->sessions_ )
+    {
+        s->run();
+    }
+}

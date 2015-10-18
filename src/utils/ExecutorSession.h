@@ -7,20 +7,24 @@
 #ifndef EXECUTOR_SESSION_H_
 #define EXECUTOR_SESSION_H_ 
 
-#include "Session.h"
+#include "maraton.h"
+#include "ClusterSession.h"
 #include "uv.h"
 
 class ExecutorSession :
-    public Session
+    public ClusterSession
 {
 public:
+
     ExecutorSession(uv_tcp_t* conn);
     virtual ~ExecutorSession() override;
 
-    // 通过 Session 继承
-    virtual void on_recv( int len ) override;
-
     virtual void run() override;
+     
+protected:
+    
+    // 通过 ClusterSession 继承
+    virtual void on_data_recv( const Buffer buffer ) override;
 
 };
 

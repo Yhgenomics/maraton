@@ -8,18 +8,14 @@
 
 #include "maraton.h"
 #include "MasterSession.h"
-#include "Session.h"
-
-static void uv_connection_cb_process( uv_stream_t * server, int status );
-static void uv_connected_cb_process( uv_connect_t* req, int status );
-static void uv_alloc_cb_process( uv_handle_t * handle, size_t suggested_size, uv_buf_t * buf );
-static void uv_read_cb_process( uv_stream_t * stream, ssize_t nread, const uv_buf_t * buf );
+#include "Session.h" 
 
 namespace Core
 {
     class UVSockService  
     {
     public:
+
         UVSockService();
         ~UVSockService();
 
@@ -43,7 +39,6 @@ namespace Core
         static void uv_connected_cb_process( uv_connect_t* req, int status );
         static void uv_alloc_cb_process( uv_handle_t * handle, size_t suggested_size, uv_buf_t * buf );
         static void uv_read_cb_process( uv_stream_t * stream, ssize_t nread, const uv_buf_t * buf );
-        static void uv_shutdown_cb_process( uv_shutdown_t* req, int status );
         static void uv_close_cb_process( uv_handle_t* handle );
 
     private:

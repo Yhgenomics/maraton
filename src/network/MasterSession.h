@@ -7,22 +7,26 @@
 #ifndef MASTER_SESSION_H_
 #define MASTER_SESSION_H_
 
-#include "Session.h"
+#include "ClusterSession.h"
 
 #include "maraton.h"
 #include "uv.h"
 
 class MasterSession :
-    public Session
+    public ClusterSession
 { 
 public:
 
     MasterSession( uv_tcp_t * conn );
     virtual ~MasterSession() override;
 
-    virtual void on_recv( int len ) override;
     virtual void run() override;
     
+protected:
+
+    // Í¨¹ý ClusterSession ¼Ì³Ð
+    virtual void on_data_recv( const Buffer buffer ) override;
+
 };
 
 #endif //MASTER_SESSION_H__H_ 

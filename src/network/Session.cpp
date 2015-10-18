@@ -2,16 +2,22 @@
 #include "maraton.h"
 #include "uv.h"
 #include <memory.h>
-
+#include <thread>
+#include <atomic>
+#include <mutex>
 #include "UVSockService.h"
+
 
 Session::Session( uv_tcp_t * conn )
 {
     recv_buffer_ = new char[this->buffer_len()];
     send_buffer_ = new char[this->buffer_len()];
+
     send_req_ = new uv_write_t();
     memset( send_req_, 0, sizeof( uv_write_t ) );
     this->conn = conn;
+
+    this->id_ = Session::create_session_id();
 }
 
 Session::~Session()
@@ -45,4 +51,18 @@ void Session::send( const char * data, int len )
 void Session::close()
 {
     uv_close( (uv_handle_t*)this->conn , Core::UVSockService::uv_close_cb_process );
+}
+
+
+
+int Session::create_session_id()
+{
+    static int session_id = 10000;
+    static std::mutex m_lock;
+
+    m_lock.lock();
+    session_id++;
+    m_lock.unlock();
+
+    return session_id;
 }

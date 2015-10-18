@@ -11,12 +11,6 @@
 #include "uv.h"
 #include "Singleton.h"
 
-enum SESSIONTYPE
-{
-    Master,
-    RESTAPI,
-    EXECUTOR
-};
 
 class SessionFactory
     : public Singleton<SessionFactory>

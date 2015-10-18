@@ -69,7 +69,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>../src;../src/network;../src/executor;../src/master;../src/thirdpart;../src/include;../src/utils;$(IncludePath)</IncludePath>
+    <IncludePath>../src/http;../src;../src/network;../src/executor;../src/master;../src/thirdpart;../src/include;../src/utils;$(IncludePath)</IncludePath>
     <SourcePath>../src/master;../src/executor;../src/network;../src/;$(SourcePath)</SourcePath>
     <LibraryPath>../lib;$(LibraryPath)</LibraryPath>
     <ReferencePath>../lib;$(ReferencePath)</ReferencePath>
@@ -125,14 +125,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\network\HTTPSession.cpp" />
     <ClCompile Include="..\src\network\MasterSession.cpp" />
+    <ClCompile Include="..\src\network\NetworkDataBuilder.cpp" />
     <ClCompile Include="..\src\network\SessionFactory.cpp" />
     <ClCompile Include="..\src\network\Session.cpp" />
+    <ClCompile Include="..\src\network\SessionManager.cpp" />
     <ClCompile Include="..\src\network\UVSockService.cpp" />
     <ClCompile Include="..\src\utils\ExecutorSession.cpp" />
     <ClCompile Include="..\src\utils\Logger.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\http\HTTP.h" />
+    <ClInclude Include="..\src\http\HTTPRequest.hpp" />
+    <ClInclude Include="..\src\http\HTTPResponse.hpp" />
+    <ClInclude Include="..\src\http\HTTPRouter.hpp" />
     <ClInclude Include="..\src\include\android-ifaddrs.h" />
     <ClInclude Include="..\src\include\pthread-fixes.h" />
     <ClInclude Include="..\src\include\stdint-msvc2008.h" />
@@ -149,9 +156,12 @@
     <ClInclude Include="..\src\include\uv-win.h" />
     <ClInclude Include="..\src\include\uv.h" />
     <ClInclude Include="..\src\maraton.h" />
+    <ClInclude Include="..\src\network\HTTPSession.h" />
     <ClInclude Include="..\src\network\MasterSession.h" />
+    <ClInclude Include="..\src\network\NetworkDataBuilder.h" />
     <ClInclude Include="..\src\network\SessionFactory.h" />
     <ClInclude Include="..\src\network\Session.h" />
+    <ClInclude Include="..\src\network\SessionManager.h" />
     <ClInclude Include="..\src\network\UVSockService.h" />
     <ClInclude Include="..\src\thirdpart\HTTPParser.hpp" />
     <ClInclude Include="..\src\thirdpart\json.hpp" />

@@ -6,14 +6,15 @@ int main(int argc , char** argv)
     Core::UVSockService srv;
     Core::UVSockService restAPI;
 
+   // srv.session_type( SESSIONTYPE::MASTER );
+    //srv.listen( "0.0.0.0", 90 );
 
-    srv.listen( "0.0.0.0", 90 );
-
-    restAPI.listen( "0.0.0.0", 88 );
+    restAPI.session_type( SESSIONTYPE::RESTAPI );
+    restAPI.listen( "0.0.0.0", 80 );
 
     while ( 1 )
     {
-        srv.run();
+        //srv.run();
         restAPI.run();
     }
 

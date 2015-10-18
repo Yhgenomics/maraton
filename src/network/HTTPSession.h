@@ -4,25 +4,30 @@
 * Date       :
 * Description:
 * * * * * * * * * * * * * * * */
-#ifndef EXECUTOR_SESSION_H_
-#define EXECUTOR_SESSION_H_ 
+#ifndef HTTP_SESSION_H_
+#define HTTP_SESSION_H_ 
 
-#include "Session.h"
 #include "uv.h"
+#include "Session.h"
+#include "HTTPRouter.hpp"
 
-class ExecutorSession :
+class HTTPSession :
     public Session
 {
 public:
-    ExecutorSession(uv_tcp_t* conn);
-    virtual ~ExecutorSession() override;
+
+    HTTPSession( uv_tcp_t* conn );
+    virtual ~HTTPSession() override;
 
     // Í¨¹ý Session ¼Ì³Ð
     virtual void on_recv( int len ) override;
-
     virtual void run() override;
+
+private:
+
+    HTTPRouter* router_;
 
 };
 
 
-#endif //EXECUTOR_SESSION_H_ 
+#endif //HTTP_SESSION_H_H_ 

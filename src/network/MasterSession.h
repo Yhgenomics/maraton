@@ -18,7 +18,7 @@ class MasterSession :
 public:
 
     MasterSession( uv_tcp_t * conn );
-    ~MasterSession();
+    virtual ~MasterSession() override;
 
     virtual void on_recv( int len ) override;
     virtual void run() override;

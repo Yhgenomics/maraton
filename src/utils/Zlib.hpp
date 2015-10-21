@@ -11,19 +11,15 @@ public:
     Buffer compress( const char* data, int len)
     {
         Buffer buffer;
-        buffer.raw = new char[len];
-        memcpy( buffer.raw, data, len );
-        buffer.length = len;
-
+        buffer.raw( data, len );
+        
         return buffer;
     };
 
     Buffer uncompress( const char* data, int len)
     {
         Buffer buffer;
-        buffer.raw = new char[len];
-        memcpy( buffer.raw, data, len );
-        buffer.length = len;
+        buffer.raw( data, len );
 
         return buffer;
     };

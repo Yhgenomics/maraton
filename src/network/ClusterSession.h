@@ -17,7 +17,7 @@ public:
 
 protected:
 
-    virtual void on_data_recv(const Buffer buffer) = 0;
+    virtual void on_data_recv( Buffer buffer) = 0;
 
 private:
 

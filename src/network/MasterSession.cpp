@@ -21,4 +21,5 @@ void MasterSession::run()
 
 void MasterSession::on_data_recv( const Buffer buffer )
 {
+
 }

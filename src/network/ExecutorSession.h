@@ -10,6 +10,8 @@
 #include "maraton.h"
 #include "ClusterSession.h"
 #include "uv.h"
+#include <vector>
+#include <mutex>
 
 class Executor;
 
@@ -26,9 +28,14 @@ public:
 protected:
     
     // Í¨¹ý ClusterSession ¼Ì³Ð
-    virtual void on_data_recv( const Buffer buffer ) override;
+    virtual void on_data_recv( Buffer buffer ) override;
     Executor* executor_;
 
+private:
+
+    std::vector<Buffer> buffers_;
+    std::mutex mtx;
+    
 };
 
 

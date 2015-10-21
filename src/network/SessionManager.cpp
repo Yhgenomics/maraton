@@ -3,7 +3,8 @@
 
 void SessionManager::run()
 {
-    for ( auto s : Manager<Session>::instance_ )
+    auto elements = Manager<Session>::instances();
+    for ( auto s : elements )
     {
         s->run();
     }

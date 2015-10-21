@@ -66,6 +66,7 @@ bool ClusterSession::try_read_flag()
         return true;
     }
 
+    SAFE_DELETE( data );
     return false;
 }
 
@@ -102,10 +103,10 @@ bool ClusterSession::try_read_body()
     int oringal_size = 0;
 
     auto raw_data = this->compressor_.uncompress( data, this->compressed_length_ );
+    
+    SAFE_DELETE( data );
 
     this->on_data_recv( raw_data );
-
-    SAFE_DELETE( data );
 
     return true;
 }

@@ -22,6 +22,7 @@ public:
     void run();
 
 private:
+
     friend Singleton<SessionManager>;
 
 };

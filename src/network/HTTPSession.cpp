@@ -9,7 +9,7 @@ HTTPSession::HTTPSession( uv_tcp_t* conn )
     this->handler = new HTTPHandler( this );
     this->handler->router()->response( [&] ( HTTPResponse* rep ) { 
         auto buffer = rep->bytes();
-        this->send( buffer.raw, buffer.length );
+        this->send( buffer.raw(), buffer.length() );
         this->close();
     } );
 }

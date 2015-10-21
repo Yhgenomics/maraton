@@ -53,6 +53,7 @@ public:
     Buffer bytes() 
     {
         Buffer ret;
+        int len = 0;
         char* buffer = new char[HTTP_RESPONSE_CONTENT_SIZE];
         string head = "";
         char* p = buffer;
@@ -69,12 +70,12 @@ public:
         head += "\r\n";
 
         memcpy( buffer, head.c_str(), head.length() );
-        ret.length += static_cast< int >( head.length() );
+        len += static_cast< int >( head.length() );
         memcpy( buffer + head.length(), this->content_, this->content_len_ );
-        ret.length += this->content_len_;
+        len += this->content_len_;
 
-        ret.raw = new char[ret.length];
-        memcpy( ret.raw, buffer, ret.length );
+        ret.raw( buffer, len );
+       // memcpy( ret.raw, buffer, ret.length );
 
         SAFE_DELETE( buffer );
 

@@ -9,49 +9,56 @@ public:
     Buffer() {};
     ~Buffer()
     {
-        SAFE_DELETE( this->raw );
+        SAFE_DELETE( this->raw_ );
     };
-    Buffer( Buffer & buffer )
+    Buffer(const Buffer & buffer )
     {
-        SAFE_DELETE ( this->raw );
-
-        this->raw = new char[buffer.length];
-        memcpy( this->raw, buffer.raw, buffer.length );
-
-        this->length = buffer.length;
+        this->raw( buffer.raw_, buffer.length_ );
     };
+    
     Buffer( Buffer&& buffer )
     {
-        this->raw = buffer.raw;
-        this->length = buffer.length;
+        this->raw_ = buffer.raw_;
+        this->length_ = buffer.length_;
 
-        buffer.raw = nullptr;
-        buffer.length = 0;
+        buffer.raw_ = nullptr;
+        buffer.length_ = 0;
     }
-    Buffer& operator=( Buffer& buffer )
+    Buffer& operator=(const Buffer& buffer )
     {
-        SAFE_DELETE ( this->raw );
-
-        this->raw = new char[buffer.length];
-        memcpy( this->raw, buffer.raw, buffer.length );
-
-        this->length = buffer.length;
+        this->raw( buffer.raw_, buffer.length_ );
 
         return *this;
     }
     Buffer& operator=( Buffer&& buffer )
     {
-        this->raw = buffer.raw;
-        this->length = buffer.length;
+        this->raw_ = buffer.raw_;
+        this->length_ = buffer.length_;
 
-        buffer.raw = nullptr;
-        buffer.length = 0;
+        buffer.raw_ = nullptr;
+        buffer.length_ = 0;
 
         return *this;
     }
 
-    char* raw = nullptr;
-    int length = 0;
+    void raw(const char* data , int length) 
+    {
+        SAFE_DELETE( this->raw_ );
+        this->raw_ = new char[length];
+        this->length_ = length;
+        memcpy( this->raw_, data, length );
+
+    }
+
+    const char* raw() { return this->raw_; };
+    int length() { return this->length_; };
+
+
+private:
+
+    char* raw_ = nullptr;
+    int length_ = 0;
+
 };
 
 

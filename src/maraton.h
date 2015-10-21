@@ -1,6 +1,9 @@
 #include "utils/Macro.h"
-#include "utils/Logger.h"
-#include "utils/Singleton.h"
+#include "utils/Logger.hpp"
+#include "utils/Singleton.hpp"
 #include "utils/Zlib.hpp"
-#include "utils/CircleBuffer.h"
+#include "utils/CircleBuffer.hpp"
 #include "utils/Buffer.hpp"
+#include "utils/Manager.hpp"
+
+#include "thirdpart/json.hpp"

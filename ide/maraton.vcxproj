@@ -69,15 +69,15 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>../src/http;../src;../src/network;../src/executor;../src/master;../src/thirdpart;../src/include;../src/utils;$(IncludePath)</IncludePath>
-    <SourcePath>../src/master;../src/executor;../src/network;../src/;$(SourcePath)</SourcePath>
+    <IncludePath>../src;../src/http;../src/network;../src/executor;../src/master;../src/thirdpart;../src/include;../src/utils;$(IncludePath)</IncludePath>
+    <SourcePath>$(SourcePath)</SourcePath>
     <LibraryPath>../lib;$(LibraryPath)</LibraryPath>
     <ReferencePath>../lib;$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ExecutablePath>../src/utils;../src/thirdpart;../src/http;../src/master;../src/network;../src/include;../src/;$(ExecutablePath)</ExecutablePath>
-    <LibraryPath>../lib/;$(LibraryPath)</LibraryPath>
-    <IncludePath>../src/;../src/utils;../src/thirdpart;../src/network;../src/master;../src/http;../src/executor;../src/include;$(IncludePath)</IncludePath>
+    <LibraryPath>../lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>../src/message;../src/;../src/utils;../src/thirdpart;../src/network;../src/master;../src/http;../src/executor;../src/include;$(IncludePath)</IncludePath>
     <ReferencePath>../lib;$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -88,7 +88,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libuv.lib;advapi32.lib;iphlpapi.lib;psapi.lib;shell32.lib;userenv.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>vld_x86.lib;libuv.lib;advapi32.lib;iphlpapi.lib;psapi.lib;shell32.lib;userenv.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -99,7 +99,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libuv_x64.lib;advapi32.lib;iphlpapi.lib;psapi.lib;shell32.lib;userenv.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libuv_x64.lib;advapi32.lib;iphlpapi.lib;psapi.lib;shell32.lib;userenv.lib;ws2_32.lib;vld_x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -131,20 +131,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\executor\Executor.cpp" />
+    <ClCompile Include="..\src\executor\ExecutorManager.cpp" />
+    <ClCompile Include="..\src\http\HTTPHandler.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\message\Message.cpp" />
     <ClCompile Include="..\src\network\ClusterSession.cpp" />
+    <ClCompile Include="..\src\network\ExecutorSession.cpp" />
     <ClCompile Include="..\src\network\HTTPSession.cpp" />
     <ClCompile Include="..\src\network\MasterSession.cpp" />
     <ClCompile Include="..\src\network\SessionFactory.cpp" />
     <ClCompile Include="..\src\network\Session.cpp" />
     <ClCompile Include="..\src\network\SessionManager.cpp" />
     <ClCompile Include="..\src\network\UVSockService.cpp" />
-    <ClCompile Include="..\src\utils\CircleBuffer.cpp" />
-    <ClCompile Include="..\src\utils\ExecutorSession.cpp" />
-    <ClCompile Include="..\src\utils\Logger.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\http\HTTP.h" />
+    <ClInclude Include="..\src\executor\Executor.h" />
+    <ClInclude Include="..\src\executor\ExecutorManager.h" />
+    <ClInclude Include="..\src\http\HTTPHandler.h" />
     <ClInclude Include="..\src\http\HTTPRequest.hpp" />
     <ClInclude Include="..\src\http\HTTPResponse.hpp" />
     <ClInclude Include="..\src\http\HTTPRouter.hpp" />
@@ -163,8 +167,12 @@
     <ClInclude Include="..\src\include\uv-version.h" />
     <ClInclude Include="..\src\include\uv-win.h" />
     <ClInclude Include="..\src\include\uv.h" />
+    <ClInclude Include="..\src\include\vld.h" />
+    <ClInclude Include="..\src\include\vld_def.h" />
     <ClInclude Include="..\src\maraton.h" />
+    <ClInclude Include="..\src\message\Message.h" />
     <ClInclude Include="..\src\network\ClusterSession.h" />
+    <ClInclude Include="..\src\network\ExecutorSession.h" />
     <ClInclude Include="..\src\network\HTTPSession.h" />
     <ClInclude Include="..\src\network\MasterSession.h" />
     <ClInclude Include="..\src\network\SessionFactory.h" />
@@ -174,11 +182,11 @@
     <ClInclude Include="..\src\thirdpart\json.hpp" />
     <ClInclude Include="..\src\thirdpart\UUID.hpp" />
     <ClInclude Include="..\src\utils\Buffer.hpp" />
-    <ClInclude Include="..\src\utils\CircleBuffer.h" />
-    <ClInclude Include="..\src\utils\ExecutorSession.h" />
-    <ClInclude Include="..\src\utils\Logger.h" />
+    <ClInclude Include="..\src\utils\CircleBuffer.hpp" />
+    <ClInclude Include="..\src\utils\Logger.hpp" />
     <ClInclude Include="..\src\utils\Macro.h" />
-    <ClInclude Include="..\src\utils\Singleton.h" />
+    <ClInclude Include="..\src\utils\Manager.hpp" />
+    <ClInclude Include="..\src\utils\Singleton.hpp" />
     <ClInclude Include="..\src\utils\Zlib.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

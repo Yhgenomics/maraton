@@ -11,6 +11,8 @@
 #include "ClusterSession.h"
 #include "uv.h"
 
+class Executor;
+
 class ExecutorSession :
     public ClusterSession
 {
@@ -25,6 +27,7 @@ protected:
     
     // Í¨¹ý ClusterSession ¼Ì³Ð
     virtual void on_data_recv( const Buffer buffer ) override;
+    Executor* executor_;
 
 };
 

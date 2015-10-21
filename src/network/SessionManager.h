@@ -7,29 +7,23 @@
 #ifndef SESSION_MANAGER_H_
 #define SESSION_MANAGER_H_ 
 
-#include <vector>
+#include "Manager.hpp"
 #include "Session.h"
-
 #include "maraton.h"
 
 using namespace std;
 
 class SessionManager :
+    public Manager<Session>,
     public Singleton<SessionManager>
 {
 public:
 
-    void push( Session* session );
-    void remove( Session* session );
-
     void run();
 
 private:
-
     friend Singleton<SessionManager>;
-
-    vector<Session*> sessions_;
 
 };
 
-#endif //SESSION_MANAGER_H_ 
+#endif //!SESSION_MANAGER_H_ 

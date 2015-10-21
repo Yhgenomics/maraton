@@ -9,7 +9,7 @@
 
 #include "uv.h"
 #include "Session.h"
-#include "HTTPRouter.hpp"
+#include "HTTPHandler.h"
 
 class HTTPSession :
     public Session
@@ -24,8 +24,7 @@ public:
     virtual void run() override;
 
 private:
-
-    HTTPRouter* router_;
+    HTTPHandler* handler;
 
 };
 

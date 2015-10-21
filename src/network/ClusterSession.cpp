@@ -13,10 +13,7 @@ ClusterSession::~ClusterSession()
 void ClusterSession::on_recv( int len )
 {
     circle_buffer_.push( this->recv_buffer_, len );
-}
 
-void ClusterSession::run()
-{
     switch ( this->read_state_ )
     {
     case ES_READSTATE::FLAG:
@@ -46,6 +43,12 @@ void ClusterSession::run()
     default:
     break;
     }
+
+}
+
+void ClusterSession::run()
+{
+    return;
 }
 
 bool ClusterSession::try_read_flag()

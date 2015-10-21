@@ -2,6 +2,7 @@
 #include "MasterSession.h"
 #include "ExecutorSession.h"
 #include "HTTPSession.h"
+#include "Executor.h"
 
 Session * SessionFactory::create( uv_tcp_t* conn , SESSIONTYPE type )
 {

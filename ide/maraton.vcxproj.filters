@@ -22,6 +22,9 @@
     <Filter Include="http">
       <UniqueIdentifier>{6991484d-21de-4ca0-88a7-29adfae327a4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="message">
+      <UniqueIdentifier>{533c5866-d80e-471b-a801-392180717827}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp" />
@@ -29,12 +32,6 @@
       <Filter>network</Filter>
     </ClCompile>
     <ClCompile Include="..\src\network\MasterSession.cpp">
-      <Filter>network</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\utils\Logger.cpp">
-      <Filter>utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\utils\ExecutorSession.cpp">
       <Filter>network</Filter>
     </ClCompile>
     <ClCompile Include="..\src\network\Session.cpp">
@@ -49,11 +46,23 @@
     <ClCompile Include="..\src\network\SessionManager.cpp">
       <Filter>network</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\utils\CircleBuffer.cpp">
-      <Filter>utils</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\network\ClusterSession.cpp">
       <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\executor\ExecutorManager.cpp">
+      <Filter>executor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\executor\Executor.cpp">
+      <Filter>executor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\network\ExecutorSession.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\http\HTTPHandler.cpp">
+      <Filter>http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\message\Message.cpp">
+      <Filter>message</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -115,23 +124,11 @@
     <ClInclude Include="..\src\network\MasterSession.h">
       <Filter>network</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\utils\Singleton.h">
-      <Filter>utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\utils\Logger.h">
-      <Filter>utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\utils\ExecutorSession.h">
-      <Filter>network</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\network\Session.h">
       <Filter>network</Filter>
     </ClInclude>
     <ClInclude Include="..\src\network\SessionFactory.h">
       <Filter>network</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\http\HTTP.h">
-      <Filter>http</Filter>
     </ClInclude>
     <ClInclude Include="..\src\http\HTTPRequest.hpp">
       <Filter>http</Filter>
@@ -148,9 +145,6 @@
     <ClInclude Include="..\src\network\SessionManager.h">
       <Filter>network</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\utils\CircleBuffer.h">
-      <Filter>utils</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\utils\Buffer.hpp">
       <Filter>utils</Filter>
     </ClInclude>
@@ -162,6 +156,39 @@
     </ClInclude>
     <ClInclude Include="..\src\network\ClusterSession.h">
       <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utils\Manager.hpp">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\executor\ExecutorManager.h">
+      <Filter>executor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utils\CircleBuffer.hpp">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utils\Singleton.hpp">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utils\Logger.hpp">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\executor\Executor.h">
+      <Filter>executor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\network\ExecutorSession.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\http\HTTPHandler.h">
+      <Filter>http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\include\vld.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\include\vld_def.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\message\Message.h">
+      <Filter>message</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

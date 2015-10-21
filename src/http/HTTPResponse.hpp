@@ -39,6 +39,12 @@ public:
         this->content_len_ = len;
     };
 
+    void content( std::string content )
+    {
+        memcpy( this->content_, content.c_str(), content.length()+1 );
+        this->content_len_ = content.length() + 1;
+    };
+
     int length() 
     {
         return this->content_len_;
@@ -111,6 +117,8 @@ private:
         default:
         break;
         }
+
+        return "404 Not Found";
     }
 };
 

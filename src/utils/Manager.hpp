@@ -28,7 +28,7 @@ public:
     {
         std::unique_lock<std::mutex> lck( mtx );
 
-        std::vector<T*>::iterator itr = this->instance_.begin();
+        typename std::vector<T*>::iterator itr = this->instance_.begin();
 
         while ( itr != this->instance_.end() )
         {

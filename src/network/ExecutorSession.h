@@ -7,11 +7,12 @@
 #ifndef EXECUTOR_SESSION_H_
 #define EXECUTOR_SESSION_H_ 
 
+#include <vector>
+#include <mutex>
+
 #include "maraton.h"
 #include "ClusterSession.h"
 #include "uv.h"
-#include <vector>
-#include <mutex>
 
 class Executor;
 

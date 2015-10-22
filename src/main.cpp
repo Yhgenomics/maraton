@@ -5,6 +5,7 @@
 #include "SessionManager.h"
 #include "ExecutorManager.h"
 #include <thread>
+#include "json.hpp"
 
 Buffer test_buffer()
 {
@@ -55,6 +56,30 @@ void test_server()
 
 int main(int argc , char** argv)
 {
+
+    nlohmann::basic_json<> json = {
+        { "pi", 3.141 },
+        { "happy", true },
+        { "name", "Nielsr" },
+        { "nothing", nullptr },
+        { "answer", {
+            { "everything", 42 }
+        } },
+        { "list", { 1, 0, 2 } },
+        { "object", {
+            { "currency", "USD\r\n" },
+            { "value", 42.99 }
+        } }
+    };
+
+    json["data"] = "abcdefg";
+
+    auto f = json["object"]["value"].get<float>();
+    auto s = json["data"].get<std::string>();
+    std::string str = json.dump();
+
+    json.parse( "{ \"name\" : \"1231\", \"int32\":1234, \"float\":11.22, \"obj\":{ \"name\":\"123123\"} }" );
+
     test_server();
 	return 0;
 }

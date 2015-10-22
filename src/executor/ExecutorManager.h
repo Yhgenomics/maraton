@@ -8,8 +8,7 @@
 #define EXECUTOR_MANAGER_H_ 
 
 #include "maraton.h"
-
-class Executor;
+#include "Executor.h"
 
 class ExecutorManager :
     public Manager<Executor>,
@@ -18,10 +17,11 @@ class ExecutorManager :
 public:
 
     void run();
+    virtual void remove( Executor* instance ) override;
 
 private:
-    friend Singleton<ExecutorManager>;
 
+    friend Singleton<ExecutorManager>;
 };
 
 #endif //!EXECUTOR_MANAGER_H_ 

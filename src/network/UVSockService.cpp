@@ -127,7 +127,7 @@ void Core::UVSockService::uv_read_cb_process( uv_stream_t * stream, ssize_t nrea
 
     if ( static_cast< int >( nread ) < 0 )
     {
-        printf( "[%d]%s\r\n", session->id(), uv_strerror( nread ) );
+        printf( "[%d]%s\r\n", session->id(), uv_strerror( static_cast< int >( nread ) ) );
         uv_read_stop( stream );
         session->close();
         return;

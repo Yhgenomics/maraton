@@ -137,6 +137,7 @@
     <ClCompile Include="..\src\executor\ExecutorManager.cpp" />
     <ClCompile Include="..\src\http\HTTPHandler.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\master\Master.cpp" />
     <ClCompile Include="..\src\message\Message.cpp" />
     <ClCompile Include="..\src\network\ClusterSession.cpp" />
     <ClCompile Include="..\src\network\ExecutorSession.cpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="..\src\include\vld.h" />
     <ClInclude Include="..\src\include\vld_def.h" />
     <ClInclude Include="..\src\maraton.h" />
+    <ClInclude Include="..\src\master\Master.h" />
     <ClInclude Include="..\src\message\Message.h" />
     <ClInclude Include="..\src\network\ClusterSession.h" />
     <ClInclude Include="..\src\network\ExecutorSession.h" />
@@ -189,6 +191,7 @@
     <ClInclude Include="..\src\utils\Macros.h" />
     <ClInclude Include="..\src\utils\Manager.hpp" />
     <ClInclude Include="..\src\utils\Singleton.hpp" />
+    <ClInclude Include="..\src\utils\Timer.hpp" />
     <ClInclude Include="..\src\utils\Zlib.hpp" />
   </ItemGroup>
   <ItemGroup>

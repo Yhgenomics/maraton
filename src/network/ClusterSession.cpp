@@ -1,4 +1,5 @@
 #include "ClusterSession.h"
+#include <memory>
 
 ClusterSession::ClusterSession( uv_tcp_t * conn )
     : Session::Session( conn )
@@ -13,44 +14,88 @@ ClusterSession::~ClusterSession()
 void ClusterSession::on_recv( const char* data, int len )
 {
     circle_buffer_.push( data, len );
-
-    switch ( this->read_state_ )
+    do
     {
-    case ES_READSTATE::FLAG:
+
+        switch ( this->read_state_ )
+        {
+        case ES_READSTATE::FLAG:
         {
             if ( this->try_read_flag() )
             {
                 this->read_state_ = ES_READSTATE::HEAD;
-            }
+                continue;
+            } 
+
+            return;
         }
         break;
 
-    case ES_READSTATE::HEAD:
+        case ES_READSTATE::HEAD:
         {
             if ( this->try_read_head() )
             {
                 this->read_state_ = ES_READSTATE::BODY;
+                continue;
             }
+
+            return;
         }
         break;
 
-    case ES_READSTATE::BODY:
+        case ES_READSTATE::BODY:
         {
             if ( this->try_read_body() )
             {
                 this->read_state_ = ES_READSTATE::FLAG;
+                continue;
             }
+
+            return;
         }
         break;
 
-    default:
+        default:
         break;
+        }
+
     } 
+    while ( true );
 }
 
 void ClusterSession::run()
 {
     return;
+}
+
+void ClusterSession::send( const char * data, int len )
+{
+    auto compressed_buffer = this->compressor_.compress( data, len );
+     
+    //0-1 YH
+    //2-3 Compressed Length
+    //4-5 Oringal Length
+    int package_len = sizeof( short ) * 2 + compressed_buffer.length() + 2;
+
+    char* package = new char[package_len];
+    char* p_package = package;
+
+    *p_package = 'Y';
+    p_package++;
+    *p_package = 'H';
+    p_package++;
+
+    *( short* ) p_package = static_cast< short >( compressed_buffer.length() );
+    p_package += sizeof( short );
+     
+    *( short* ) p_package = static_cast< short >( len );
+    p_package += sizeof( short );
+
+    memcpy( p_package, compressed_buffer.raw(), compressed_buffer.length() );
+
+    Session::send( package, package_len );
+
+    SAFE_DELETE( package );
 }
 
 bool ClusterSession::try_read_flag()
@@ -62,7 +107,7 @@ bool ClusterSession::try_read_flag()
         return false;
     }
 
-    if ( data[0] == 'Y' && data[2] == 'H' )
+    if ( data[0] == 'Y' && data[1] == 'H' )
     {
         SAFE_DELETE( data );
         return true;
@@ -77,18 +122,19 @@ bool ClusterSession::try_read_head()
 
     //0-1 Compressed Length
     //2-3 Oringal Length
-    auto data = this->circle_buffer_.pop( 4 );
+    std::unique_ptr<char> data( this->circle_buffer_.pop( sizeof( short ) * 2 ));
 
     if ( data == nullptr )
     {
         return false;
     }
 
-    this->compressed_length_ = *( unsigned short* ) data;
-    data += 2;
-    this->oringal_length_ = *( unsigned short* ) data;
+    char* pdata = data.get();
 
-    SAFE_DELETE( data );
+    this->compressed_length_ = *( unsigned short* ) pdata;
+    pdata  += sizeof(short);
+
+    this->oringal_length_ = *( unsigned short* ) pdata;
 
     return true;
 }

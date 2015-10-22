@@ -4,9 +4,9 @@
 #include "HTTPSession.h"
 #include "Executor.h"
 
-Session * SessionFactory::create( uv_tcp_t* conn , SESSIONTYPE type )
+Session * SessionFactory::create( uv_tcp_t* conn , int port )
 {
-    switch ( type )
+    switch ( port )
     {
     case MASTER:
         return new MasterSession( conn );

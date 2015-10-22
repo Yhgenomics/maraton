@@ -4,6 +4,7 @@
 * Date       :
 * Description:
 * * * * * * * * * * * * * * * */
+
 #ifndef EXECUTOR_H_
 #define EXECUTOR_H_ 
 
@@ -20,8 +21,9 @@ public:
     Executor( ExecutorSession* session ) { this->session_ = session; };
     ~Executor() {};
 
+    void run();
     void message( std::string json_str );
-    void send( Message& message );
+    void send( Message&& message );
 
 private:
 

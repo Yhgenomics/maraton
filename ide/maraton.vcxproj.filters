@@ -64,6 +64,9 @@
     <ClCompile Include="..\src\message\Message.cpp">
       <Filter>message</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\master\Master.cpp">
+      <Filter>master</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\thirdpart\json.hpp">
@@ -189,6 +192,12 @@
     </ClInclude>
     <ClInclude Include="..\src\utils\Macros.h">
       <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utils\Timer.hpp">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\master\Master.h">
+      <Filter>master</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

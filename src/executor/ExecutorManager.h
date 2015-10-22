@@ -4,6 +4,7 @@
 * Date       :
 * Description:
 * * * * * * * * * * * * * * * */
+
 #ifndef EXECUTOR_MANAGER_H_
 #define EXECUTOR_MANAGER_H_ 
 
@@ -17,7 +18,6 @@ class ExecutorManager :
 public:
 
     void run();
-    virtual void remove( Executor* instance ) override;
 
 private:
 

@@ -18,12 +18,9 @@ class CircleBuffer
 public:
      
     CircleBuffer()
-    {
-        static char* CircleBufferBuffer = new char[CIRCLEBUFFERBUFFER_LEN];
-        static int pos = 0;
-
-        this->circle_buffer_ = ( CircleBufferBuffer + pos );
-        pos += this->buffer_length_;
+    { 
+        this->circle_buffer_ = new char[this->buffer_length_];
+     
         this->available_len_ = this->buffer_length_;
         this->used_len_ = 0;
     }

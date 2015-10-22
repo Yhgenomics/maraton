@@ -23,8 +23,6 @@ void ExecutorSession::run()
 
     std::unique_lock <std::mutex> locker( this->mtx );
 
-    locker.lock();
-
     std::vector<Buffer> tmp_v ( this->buffers_.begin(), this->buffers_.end() );
     this->buffers_.clear();
 
@@ -32,8 +30,7 @@ void ExecutorSession::run()
 
     for ( auto b : tmp_v)
     {
-        auto json = nlohmann::json::parse( std::string( b.raw(), b.length() ) );
-        executor_->message( json );
+        executor_->message( std::string( b.raw(), b.length() ) );
     } 
 }
 
@@ -41,10 +38,7 @@ void ExecutorSession::on_data_recv( const Buffer& buffer )
 { 
     std::unique_lock <std::mutex> locker( this->mtx );
 
-    locker.lock();
-   
     buffers_.push_back( buffer );
     
-    locker.unlock(); 
 }
  

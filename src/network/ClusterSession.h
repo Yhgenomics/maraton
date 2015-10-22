@@ -14,6 +14,7 @@ public:
 
     void on_recv( const char* data, int len ) override;
     virtual void run() override;
+    virtual void send( const char* data, int len ) override;
 
 protected:
 

@@ -16,7 +16,7 @@ class SessionFactory
 {
 public:
 
-    Session* create( uv_tcp_t* conn , SESSIONTYPE type );
+    Session* create( uv_tcp_t* conn, int port );
 
 private:
 

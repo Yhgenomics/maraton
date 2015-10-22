@@ -19,34 +19,33 @@ Buffer test_buffer()
     b.raw( data, 100 );
 
     return b;
-} 
-void logic()
-{
-    while ( 1 )
-    {
-        SessionManager::instance()->run();
-        ExecutorManager::instance()->run();
-    };
-}
+}  
+
 void test_server()
 {
-    Core::UVSockService http;
-    http.session_type( SESSIONTYPE::RESTAPI );
-    http.listen( "0.0.0.0", 80 );
-    
-    Core::UVSockService service;
-    service.session_type( SESSIONTYPE::EXECUTOR );
-    service.listen( "0.0.0.0", 90 );
+#define SERVER
 
-    //auto thr = std::thread( logic );
+#ifdef SERVER
+
+    Core::UVSockService service;
+    
+    service.listen( "0.0.0.0", 90 );
+    service.listen( "0.0.0.0", 80 );
+
+#else
+
+    Core::UVSockService client;
+    client.session_type( SESSIONTYPE::MASTER );
+    client.connect( "127.0.0.1", 90 );
+
+#endif
 
     while ( 1 )
     {
-        http.run();
         service.run();
-
         SessionManager::instance()->run();
         ExecutorManager::instance()->run();
+        this_thread::sleep_for( std::chrono::milliseconds( 1 ) );
     }
 
     //thr.join();

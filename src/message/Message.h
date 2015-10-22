@@ -7,6 +7,8 @@
 #ifndef MESSAGE_H_
 #define MESSAGE_H_ 
 
+#define PROTOCOL_VERSION "0.0.1"
+
 #include <string.h>
 #include "maraton.h"
 
@@ -18,7 +20,7 @@ public :
     Message( const std::string json_str );
 
     //serilize
-    Message( const std::string version, size_t command, size_t status);
+    Message( const std::string version , size_t command, size_t status);
 
     Message( Message& message);
     Message( Message&& message );
@@ -32,6 +34,8 @@ public :
     size_t command() { return this->command_; };
     size_t status() { return this->status_; };
     std::string version() { return this->version_; }
+
+    nlohmann::basic_json<>* data() { return &this->raw_data_; };
 
 protected:
 

@@ -5,5 +5,6 @@
 #include "utils/CircleBuffer.hpp"
 #include "utils/Buffer.hpp"
 #include "utils/Manager.hpp"
+#include "utils/Timer.hpp"
 
 #include "thirdpart/json.hpp"

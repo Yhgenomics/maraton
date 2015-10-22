@@ -2,11 +2,12 @@
 
 #include <stdio.h>
 #include <memory.h>
- 
+#include "Master.h"
+
 MasterSession::MasterSession( uv_tcp_t * conn )
     : ClusterSession::ClusterSession( conn )
 {
-
+    master_ = new Master( this );
 }
 
 MasterSession::~MasterSession()
@@ -16,7 +17,9 @@ MasterSession::~MasterSession()
 
 void MasterSession::run() 
 {
-    ClusterSession::run();
+    ClusterSession::run(); 
+
+    this->master_->run();
 }
 
 void MasterSession::on_data_recv( const Buffer& buffer )

@@ -37,9 +37,6 @@ namespace Core
 
         uv_loop_t* loop() { return this->loop_; };
 
-        void session_type( SESSIONTYPE type );
-        SESSIONTYPE session_type();
-
     protected:
 
         friend Session;
@@ -48,13 +45,24 @@ namespace Core
         static void uv_alloc_cb_process( uv_handle_t * handle, size_t suggested_size, uv_buf_t * buf );
         static void uv_read_cb_process( uv_stream_t * stream, ssize_t nread, const uv_buf_t * buf );
         static void uv_close_cb_process( uv_handle_t* handle );
+        static void uv_write_cb_process( uv_write_t* req, int status );
+
+        static void uv_async_cb_process( uv_async_t* handle );
 
     private:
-        
+
+        uv_async_t exit_handle_;
         uv_loop_t* loop_;
         struct sockaddr_in addr_in;
+
+        struct listen_data
+        {
+            uv_loop_t* loop;
+            std::string ip;
+            int port;
+        };
+
         uv_tcp_t* socket_;
-        SESSIONTYPE session_type_;
     };
 }
 

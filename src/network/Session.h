@@ -13,9 +13,9 @@
 
 enum SESSIONTYPE
 {
-    MASTER,
-    RESTAPI,
-    EXECUTOR
+    MASTER = 0,
+    RESTAPI = 80,
+    EXECUTOR = 90
 };
 
 namespace Core
@@ -33,10 +33,10 @@ public:
     char* recv_buffer() { return this->recv_buffer_; }
     char* send_buffer() { return this->recv_buffer_; }
 
-    virtual void on_recv(const char* data, int len );
+    virtual void on_recv( const char* data, int len );
     virtual void run() = 0;
 
-    virtual void send( char* data, int len );
+    virtual void send( const char* data, int len );
     virtual void close();
 
     int id() { return this->id_; };
@@ -49,7 +49,7 @@ protected:
     char* send_buffer_ = nullptr;
     
     uv_write_t* send_req_ = nullptr;
-    uv_tcp_t * conn; 
+    uv_tcp_t * conn_; 
 
 private:
 

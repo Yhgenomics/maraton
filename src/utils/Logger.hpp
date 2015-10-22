@@ -18,22 +18,28 @@ public:
 
     static void sys( const char* fmt, ... )
     {
-        printf( "[SYS]" );
         va_list args;
+
+        printf( "\033[1;33m[SYS]" );
+        
         va_start( args, fmt );
         printf( fmt, *args );
         va_end( args );
-        printf( "\r\n" );
+        
+        printf( "\r\n\033[0m" );
     }
 
     static void error( const char* fmt, ... )
     {
-        printf( "[ERROR]" );
         va_list args;
+        
+        printf( "\033[0;31m[ERROR]" );
+        
         va_start( args, fmt );
         printf( fmt, *args );
         va_end( args );
-        printf( "\r\n" );
+        
+        printf( "\r\n\033[0m" );
     }
 
 private:

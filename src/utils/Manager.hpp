@@ -9,8 +9,8 @@
 #define MANAGER_HPP_ 
 
 #include <vector>
-#include "maraton.h"
 #include <mutex>
+#include "Macros.h"
 
 template<class T>
 class Manager

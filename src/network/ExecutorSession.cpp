@@ -5,7 +5,6 @@
 #include "json.hpp"
 #include <string.h>
 
-
 ExecutorSession::ExecutorSession(uv_tcp_t * conn)
     : ClusterSession::ClusterSession(conn)
 {

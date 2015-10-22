@@ -1,6 +1,6 @@
 #include "Executor.h"
 
-void Executor::message( nlohmann::basic_json<> json )
+void Executor::message( std::string json_str )
 {
 
 }

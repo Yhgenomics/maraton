@@ -42,7 +42,7 @@ public:
     void content( std::string content )
     {
         memcpy( this->content_, content.c_str(), content.length()+1 );
-        this->content_len_ = content.length() + 1;
+        this->content_len_ = static_cast< int > ( content.length() + 1 );
     };
 
     int length() 
@@ -67,6 +67,7 @@ public:
         {
             head += kv.first + ": " + kv.second + "\r\n";
         }
+
         head += "\r\n";
 
         memcpy( buffer, head.c_str(), head.length() );
@@ -75,7 +76,6 @@ public:
         len += this->content_len_;
 
         ret.raw( buffer, len );
-       // memcpy( ret.raw, buffer, ret.length );
 
         SAFE_DELETE( buffer );
 
@@ -93,6 +93,7 @@ public:
         {
             this->content_ = new char[1024 * 1024];
         }
+
         memset( this->content_, 0, 1024 * 1024 );
     };
 
@@ -110,13 +111,15 @@ private:
         switch ( status )
         {
         case 200:
-        return "200 OK";
-        break;
+            return "200 OK";
+            break;
+
         case 404:
-        return "404 Not Found";
-        break;
+            return "404 Not Found";
+            break;
+
         default:
-        break;
+            break;
         }
 
         return "404 Not Found";

@@ -1,9 +1,10 @@
 /* * * * * * * * * * * * * * * *
 * YHGenomics Inc.
 * Author     : yang shubo
-* Date       :
+* Date       : 2015-10-22
 * Description:
 * * * * * * * * * * * * * * * */
+
 #ifndef LOGER_H_
 #define LOGER_H_ 
 
@@ -24,6 +25,7 @@ public:
         va_end( args );
         printf( "\r\n" );
     }
+
     static void error( const char* fmt, ... )
     {
         printf( "[ERROR]" );
@@ -35,10 +37,9 @@ public:
     }
 
 private:
-
-    Logger();
-    ~Logger();
-
+    
+    Logger() {};
+    ~Logger() {};
 };
 
 #endif //LOGER_H_ 

@@ -8,16 +8,16 @@ class ClusterSession :
     public Session
 {
 public:
+
     ClusterSession( uv_tcp_t* conn );
     virtual ~ClusterSession() override;
 
-    // Í¨¹ý Session ¼Ì³Ð
-    void on_recv( int len ) override;
+    void on_recv( const char* data, int len ) override;
     virtual void run() override;
 
 protected:
 
-    virtual void on_data_recv( Buffer buffer) = 0;
+    virtual void on_data_recv( const Buffer& buffer) = 0;
 
 private:
 

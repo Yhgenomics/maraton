@@ -7,11 +7,13 @@ HTTPSession::HTTPSession( uv_tcp_t* conn )
     : Session::Session( conn )
 { 
     this->handler = new HTTPHandler( this );
-    this->handler->router()->response( [&] ( HTTPResponse* rep ) { 
-        auto buffer = rep->bytes();
-        this->send( buffer.raw(), buffer.length() );
-        this->close();
-    } );
+    this->handler->router()->response( 
+        [&] ( HTTPResponse* rep ) { 
+            auto buffer = rep->bytes();
+            this->send( buffer.raw(), buffer.length() );
+            this->close();
+        }
+    );
 }
 
 HTTPSession::~HTTPSession()
@@ -19,9 +21,9 @@ HTTPSession::~HTTPSession()
     SAFE_DELETE( this->handler );
 }
 
-void HTTPSession::on_recv( int len )
+void HTTPSession::on_recv( const char* data, int len )
 {
-    handler->router()->parse( this->recv_buffer_, len );
+    handler->router()->parse( data, len );
 }
 
 void HTTPSession::run()

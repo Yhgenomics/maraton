@@ -24,7 +24,6 @@ public:
 private:
 
     friend Singleton<SessionManager>;
-
 };
 
 #endif //!SESSION_MANAGER_H_ 

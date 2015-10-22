@@ -1,0 +1,1677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="parser" Collapsed="true">
+    <Position X="43.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAEgAAAAAgCAAEAAAAAAAAAAAAIAEAIAA=</HashCode>
+      <FileName>D:\Git\maraton\src\thirdpart\json.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UUID" Collapsed="true">
+    <Position X="45.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAEAAAAAAEAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\thirdpart\UUID.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Executor" Collapsed="true">
+    <Position X="45.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAQAQAAAAAAAAAAAAAAAAAAAAgAAAAACA=</HashCode>
+      <FileName>D:\Git\maraton\src\executor\Executor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExecutorManager" Collapsed="true">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\executor\ExecutorManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClusterSession" Collapsed="true">
+    <Position X="3.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABoAKAAAAAAAAIAAEBAAAAAAABAAAQAASAAAAAAE=</HashCode>
+      <FileName>D:\Git\maraton\src\network\ClusterSession.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExecutorSession" Collapsed="true">
+    <Position X="2.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAEEAAAAAAAAABACAAAEAAAAAE=</HashCode>
+      <FileName>D:\Git\maraton\src\network\ExecutorSession.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HTTPSession" Collapsed="true">
+    <Position X="7.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAggAAAAQAAAAAAAAAAABAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\network\HTTPSession.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MasterSession" Collapsed="true">
+    <Position X="5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAACAAAAEAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>D:\Git\maraton\src\network\MasterSession.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SessionFactory" Collapsed="true">
+    <Position X="7" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAQAABAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\network\SessionFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Session" Collapsed="true">
+    <Position X="5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAoAAAABAQQAAAAAAAAQgAAQAAAAAAIAQIAAAAgE=</HashCode>
+      <FileName>D:\Git\maraton\src\network\Session.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SessionManager" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\network\SessionManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Buffer" Collapsed="true">
+    <Position X="41.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIABAAAAAAAEAAAAAAAAAAAAAAAAAgAAAYQAA=</HashCode>
+      <FileName>D:\Git\maraton\src\utils\Buffer.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircleBuffer" Collapsed="true">
+    <Position X="43.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAABAAAIAAAQAAAAAFAAAIAAACAAAAQAEIAoAAQAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\utils\CircleBuffer.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logger" Collapsed="true">
+    <Position X="40" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAIAAABAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\utils\Logger.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Manager&lt;T&gt;" Collapsed="true">
+    <Position X="7.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAABAAAAACAAIAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\utils\Manager.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Singleton&lt;T&gt;" Collapsed="true">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAABAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\utils\Singleton.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zlib" Collapsed="true">
+    <Position X="48.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>D:\Git\maraton\src\utils\Zlib.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HTTPHandler" Collapsed="true">
+    <Position X="47" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAICAAAAAAAEAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\http\HTTPHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HTTPRequest" Collapsed="true">
+    <Position X="48.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAREAIAAAGAQAIACAACAgQIAACAEEACAAAAAIAA=</HashCode>
+      <FileName>D:\Git\maraton\src\http\HTTPRequest.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HTTPResponse" Collapsed="true">
+    <Position X="50.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQCAAUAAAAAAAAEAEQAAACAAgACAAgAAAAAAIEAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\http\HTTPResponse.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HTTPRouter" Collapsed="true">
+    <Position X="52.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAEAAAAAAAAAAgQAAQAAAAAgAAAgBAAAAAAAIIAA=</HashCode>
+      <FileName>D:\Git\maraton\src\http\HTTPRouter.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Message" Collapsed="true">
+    <Position X="41.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAACAACAAAAgQAAAiAAAAgIAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\message\Message.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nlohmann::basic_json&lt;ObjectType&lt;U, V, ...Args&gt;, ArrayType&lt;U, ...Args&gt;, StringType, BooleanType, NumberIntegerType, NumberFloatType, AllocatorType&lt;U&gt;&gt;" Collapsed="true">
+    <Position X="40" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hEAAMIECADDAwADEBKlMQQASACUBBAAAiUBgAkAMIIo=</HashCode>
+      <FileName>D:\Git\maraton\src\thirdpart\json.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core::UVSockService" Collapsed="true">
+    <Position X="47" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAQAAASAAAgEAAAABgCQAgBAAAAAAhQAAAIAA=</HashCode>
+      <FileName>D:\Git\maraton\src\network\UVSockService.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="ifaddrs" Collapsed="true">
+    <Position X="48.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQACAAAAAAAAAAAAAEwAAACgAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\android-ifaddrs.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="__unnamed_struct_0006_1" Collapsed="true">
+    <Position X="15.5" Y="37.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\pthread-fixes.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv__work" Collapsed="true">
+    <Position X="40" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIQAAACAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-threadpool.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv__io_s" Collapsed="true">
+    <Position X="7.5" Y="37.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAgAAAAAAAAAAAAAAAAIAIAAAAAABgAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv__async" Collapsed="true">
+    <Position X="50.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAIAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_buf_t" Collapsed="true">
+    <Position X="41.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="__unnamed_struct_0010_1" Collapsed="true">
+    <Position X="31.5" Y="36.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAgAQAEAAAAAAAIAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="__unnamed_struct_0010_2" Collapsed="true">
+    <Position X="37.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAIA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="pollfd" Collapsed="true">
+    <Position X="11.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAABAAI=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="_AFD_POLL_HANDLE_INFO" Collapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="_AFD_POLL_INFO" Collapsed="true">
+    <Position X="3.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAACAEAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="__unnamed_struct_0012_7" Collapsed="true">
+    <Position X="40" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAgAQAEAAAAAAAIAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="__unnamed_struct_0012_8" Collapsed="true">
+    <Position X="41.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_once_s" Collapsed="true">
+    <Position X="43.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv__dirent_s" Collapsed="true">
+    <Position X="52.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="__unnamed_struct_0012_9" Collapsed="true">
+    <Position X="43.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAIA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="__unnamed_struct_0013_6" Collapsed="true">
+    <Position X="35.5" Y="33.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="__unnamed_struct_0013_7" Collapsed="true">
+    <Position X="35.5" Y="28.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAACABAAAAAABACABAAAABIjAAAAAAACQACAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_req_s" Collapsed="true">
+    <Position X="3.5" Y="33.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_shutdown_s" Collapsed="true">
+    <Position X="33.5" Y="23.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_handle_s" Collapsed="true">
+    <Position X="33.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_stream_s" Collapsed="true">
+    <Position X="15.5" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_write_s" Collapsed="true">
+    <Position X="33.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_tcp_s" Collapsed="true">
+    <Position X="33.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_connect_s" Collapsed="true">
+    <Position X="7.5" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_udp_s" Collapsed="true">
+    <Position X="33.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_udp_send_s" Collapsed="true">
+    <Position X="31.5" Y="31.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_tty_s" Collapsed="true">
+    <Position X="27.5" Y="30.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_pipe_s" Collapsed="true">
+    <Position X="23.5" Y="30.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_poll_s" Collapsed="true">
+    <Position X="19.5" Y="30.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_prepare_s" Collapsed="true">
+    <Position X="11.5" Y="29.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_check_s" Collapsed="true">
+    <Position X="30.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_idle_s" Collapsed="true">
+    <Position X="29.5" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_async_s" Collapsed="true">
+    <Position X="29.5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_timer_s" Collapsed="true">
+    <Position X="29.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_getaddrinfo_s" Collapsed="true">
+    <Position X="29.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_getnameinfo_s" Collapsed="true">
+    <Position X="3.5" Y="28.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_stdio_container_s" Collapsed="true">
+    <Position X="7.5" Y="27.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAQ=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_process_options_s" Collapsed="true">
+    <Position X="27.5" Y="25.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAACAEABECAAAAAAAAAAAAABAAAABAAAAAAIAAQ=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_process_s" Collapsed="true">
+    <Position X="23.5" Y="25.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_work_s" Collapsed="true">
+    <Position X="19.5" Y="25.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQCAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_cpu_info_s" Collapsed="true">
+    <Position X="26.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAAIAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_interface_address_s" Collapsed="true">
+    <Position X="25.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAIAAAAEAAAAAAAAAAAIEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_dirent_s" Collapsed="true">
+    <Position X="25.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="__unnamed_struct_0013_15" Collapsed="true">
+    <Position X="11.5" Y="24.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="__unnamed_struct_0013_16" Collapsed="true">
+    <Position X="3.5" Y="23.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAQIQAAAAAAARAAAAQAAAAAAAAAUAAAAkAAACAAiwA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_fs_s" Collapsed="true">
+    <Position X="7.5" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAICgAABAACAAAAACAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_fs_event_s" Collapsed="true">
+    <Position X="23.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_fs_poll_s" Collapsed="true">
+    <Position X="21.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_signal_s" Collapsed="true">
+    <Position X="21.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="uv_loop_s" Collapsed="true">
+    <Position X="11.5" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAACAQAAAQAAAAAgA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="nlohmann::`anonymous-namespace'::has_mapped_type&lt;T&gt;" Collapsed="true">
+    <Position X="45.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\thirdpart\json.hpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="std::hash&lt;nlohmann::json&gt;" Collapsed="true">
+    <Position X="47" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\thirdpart\json.hpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="pthread_barrier_t" Collapsed="true">
+    <Position X="15.5" Y="39.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\pthread-fixes.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="int8_t" Collapsed="true">
+    <Position X="20.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="int16_t" Collapsed="true">
+    <Position X="3.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="int32_t" Collapsed="true">
+    <Position X="19.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uint8_t" Collapsed="true">
+    <Position X="17.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uint16_t" Collapsed="true">
+    <Position X="7.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uint32_t" Collapsed="true">
+    <Position X="17.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="int64_t" Collapsed="true">
+    <Position X="13.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uint64_t" Collapsed="true">
+    <Position X="9.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="int_least8_t" Collapsed="true">
+    <Position X="22.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="int_least16_t" Collapsed="true">
+    <Position X="0.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="int_least32_t" Collapsed="true">
+    <Position X="19.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="int_least64_t" Collapsed="true">
+    <Position X="16.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uint_least8_t" Collapsed="true">
+    <Position X="20.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uint_least16_t" Collapsed="true">
+    <Position X="7.5" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uint_least32_t" Collapsed="true">
+    <Position X="19.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uint_least64_t" Collapsed="true">
+    <Position X="6.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="int_fast8_t" Collapsed="true">
+    <Position X="22.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="int_fast16_t" Collapsed="true">
+    <Position X="3.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="int_fast32_t" Collapsed="true">
+    <Position X="19.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="int_fast64_t" Collapsed="true">
+    <Position X="14.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uint_fast8_t" Collapsed="true">
+    <Position X="17.5" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uint_fast16_t" Collapsed="true">
+    <Position X="7.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uint_fast32_t" Collapsed="true">
+    <Position X="17.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uint_fast64_t" Collapsed="true">
+    <Position X="9.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="intptr_t" Collapsed="true">
+    <Position X="37.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uintptr_t" Collapsed="true">
+    <Position X="41.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="intmax_t" Collapsed="true">
+    <Position X="13.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uintmax_t" Collapsed="true">
+    <Position X="9.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\stdint-msvc2008.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv__io_cb" Collapsed="true">
+    <Position X="47" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv__io_t" Collapsed="true">
+    <Position X="7.5" Y="39.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv__async_cb" Collapsed="true">
+    <Position X="43.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_file" Collapsed="true">
+    <Position X="52.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_os_sock_t" Collapsed="true">
+    <Position X="48.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_os_fd_t" Collapsed="true">
+    <Position X="47" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_once_t" Collapsed="true">
+    <Position X="45.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_thread_t" Collapsed="true">
+    <Position X="52.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_mutex_t" Collapsed="true">
+    <Position X="43.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_rwlock_t" Collapsed="true">
+    <Position X="43.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_sem_t" Collapsed="true">
+    <Position X="45.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_cond_t" Collapsed="true">
+    <Position X="45.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_key_t" Collapsed="true">
+    <Position X="40" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_barrier_t" Collapsed="true">
+    <Position X="31.5" Y="38.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_gid_t" Collapsed="true">
+    <Position X="50.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_uid_t" Collapsed="true">
+    <Position X="45.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv__dirent_t" Collapsed="true">
+    <Position X="45.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_lib_t" Collapsed="true">
+    <Position X="37.5" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-unix.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="ssize_t" Collapsed="true">
+    <Position X="37.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="WSAPOLLFD" Collapsed="true">
+    <Position X="8.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PWSAPOLLFD" Collapsed="true">
+    <Position X="11.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPWSAPOLLFD" Collapsed="true">
+    <Position X="11.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPFN_ACCEPTEX" Collapsed="true">
+    <Position X="41.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPFN_CONNECTEX" Collapsed="true">
+    <Position X="43.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPFN_GETACCEPTEXSOCKADDRS" Collapsed="true">
+    <Position X="47" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPFN_DISCONNECTEX" Collapsed="true">
+    <Position X="45.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPFN_TRANSMITFILE" Collapsed="true">
+    <Position X="48.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="RTL_SRWLOCK" Collapsed="true">
+    <Position X="13.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="SRWLOCK" Collapsed="true">
+    <Position X="10.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PSRWLOCK" Collapsed="true">
+    <Position X="13.5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPFN_WSARECV" Collapsed="true">
+    <Position X="50.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPFN_WSARECVFROM" Collapsed="true">
+    <Position X="52.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="NTSTATUS" Collapsed="true">
+    <Position X="37.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PNTSTATUS" Collapsed="true">
+    <Position X="37.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="CONDITION_VARIABLE" Collapsed="true">
+    <Position X="40" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PCONDITION_VARIABLE" Collapsed="true">
+    <Position X="40" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="AFD_POLL_HANDLE_INFO" Collapsed="true">
+    <Position X="15.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PAFD_POLL_HANDLE_INFO" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="AFD_POLL_INFO" Collapsed="true">
+    <Position X="3.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PAFD_POLL_INFO" Collapsed="true">
+    <Position X="3.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv-win.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_errno_t" Collapsed="true">
+    <Position X="37.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_handle_type" Collapsed="true">
+    <Position X="37.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_req_type" Collapsed="true">
+    <Position X="27.5" Y="37.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_loop_t" Collapsed="true">
+    <Position X="11.5" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_handle_t" Collapsed="true">
+    <Position X="33.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_stream_t" Collapsed="true">
+    <Position X="15.5" Y="34.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_tcp_t" Collapsed="true">
+    <Position X="33.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_udp_t" Collapsed="true">
+    <Position X="33.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_pipe_t" Collapsed="true">
+    <Position X="23.5" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_tty_t" Collapsed="true">
+    <Position X="27.5" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_poll_t" Collapsed="true">
+    <Position X="19.5" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_timer_t" Collapsed="true">
+    <Position X="29.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_prepare_t" Collapsed="true">
+    <Position X="11.5" Y="31.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_check_t" Collapsed="true">
+    <Position X="30.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_idle_t" Collapsed="true">
+    <Position X="29.5" Y="23.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_async_t" Collapsed="true">
+    <Position X="29.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_process_t" Collapsed="true">
+    <Position X="23.5" Y="27.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_fs_event_t" Collapsed="true">
+    <Position X="23.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_fs_poll_t" Collapsed="true">
+    <Position X="21.5" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_signal_t" Collapsed="true">
+    <Position X="21.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_req_t" Collapsed="true">
+    <Position X="3.5" Y="35.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_getaddrinfo_t" Collapsed="true">
+    <Position X="29.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_getnameinfo_t" Collapsed="true">
+    <Position X="3.5" Y="30.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_shutdown_t" Collapsed="true">
+    <Position X="34.5" Y="25.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_write_t" Collapsed="true">
+    <Position X="33.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_connect_t" Collapsed="true">
+    <Position X="7.5" Y="34.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_udp_send_t" Collapsed="true">
+    <Position X="31.5" Y="33.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_fs_t" Collapsed="true">
+    <Position X="7.5" Y="24.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_work_t" Collapsed="true">
+    <Position X="19.5" Y="27.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_cpu_info_t" Collapsed="true">
+    <Position X="26.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_interface_address_t" Collapsed="true">
+    <Position X="25.5" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_dirent_t" Collapsed="true">
+    <Position X="25.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_loop_option" Collapsed="true">
+    <Position X="23.5" Y="37.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_run_mode" Collapsed="true">
+    <Position X="19.5" Y="37.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_malloc_func" Collapsed="true">
+    <Position X="41.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_realloc_func" Collapsed="true">
+    <Position X="41.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_calloc_func" Collapsed="true">
+    <Position X="40" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_free_func" Collapsed="true">
+    <Position X="40" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_alloc_cb" Collapsed="true">
+    <Position X="50.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_read_cb" Collapsed="true">
+    <Position X="40" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_write_cb" Collapsed="true">
+    <Position X="50.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_connect_cb" Collapsed="true">
+    <Position X="47" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_shutdown_cb" Collapsed="true">
+    <Position X="47" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_connection_cb" Collapsed="true">
+    <Position X="48.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_close_cb" Collapsed="true">
+    <Position X="43.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_poll_cb" Collapsed="true">
+    <Position X="50.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_timer_cb" Collapsed="true">
+    <Position X="40" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_async_cb" Collapsed="true">
+    <Position X="52.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_prepare_cb" Collapsed="true">
+    <Position X="52.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_check_cb" Collapsed="true">
+    <Position X="41.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_idle_cb" Collapsed="true">
+    <Position X="52.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_exit_cb" Collapsed="true">
+    <Position X="50.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_walk_cb" Collapsed="true">
+    <Position X="47" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_fs_cb" Collapsed="true">
+    <Position X="41.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_work_cb" Collapsed="true">
+    <Position X="48.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_after_work_cb" Collapsed="true">
+    <Position X="48.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_getaddrinfo_cb" Collapsed="true">
+    <Position X="47" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_getnameinfo_cb" Collapsed="true">
+    <Position X="48.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_timespec_t" Collapsed="true">
+    <Position X="35.5" Y="35.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_stat_t" Collapsed="true">
+    <Position X="35.5" Y="30.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_fs_event_cb" Collapsed="true">
+    <Position X="43.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_fs_poll_cb" Collapsed="true">
+    <Position X="45.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_signal_cb" Collapsed="true">
+    <Position X="48.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_membership" Collapsed="true">
+    <Position X="11.5" Y="36.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_udp_send_cb" Collapsed="true">
+    <Position X="43.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_udp_recv_cb" Collapsed="true">
+    <Position X="41.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_tty_mode_t" Collapsed="true">
+    <Position X="31.5" Y="28.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_stdio_flags" Collapsed="true">
+    <Position X="15.5" Y="29.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_stdio_container_t" Collapsed="true">
+    <Position X="7.5" Y="29.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_process_options_t" Collapsed="true">
+    <Position X="27.5" Y="27.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_dirent_type_t" Collapsed="true">
+    <Position X="25.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_timeval_t" Collapsed="true">
+    <Position X="11.5" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_rusage_t" Collapsed="true">
+    <Position X="3.5" Y="25.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_fs_type" Collapsed="true">
+    <Position X="15.5" Y="24.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="uv_thread_cb" Collapsed="true">
+    <Position X="50.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="VLD_REPORT_HOOK" Collapsed="true">
+    <Position X="52.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\vld_def.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="__unnamed_enum_0013_1" Collapsed="true">
+    <Position X="37.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0013_2" Collapsed="true">
+    <Position X="37.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0013_3" Collapsed="true">
+    <Position X="27.5" Y="35.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0013_4" Collapsed="true">
+    <Position X="23.5" Y="35.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0013_5" Collapsed="true">
+    <Position X="19.5" Y="35.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0013_8" Collapsed="true">
+    <Position X="11.5" Y="34.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="uv_tcp_flags" Collapsed="true">
+    <Position X="48.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="uv_udp_flags" Collapsed="true">
+    <Position X="50.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAEAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0013_9" Collapsed="true">
+    <Position X="31.5" Y="26.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="uv_poll_event" Collapsed="true">
+    <Position X="45.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0013_10" Collapsed="true">
+    <Position X="15.5" Y="27.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAABAAAAAAIABAAAAAAEEAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="uv_process_flags" Collapsed="true">
+    <Position X="47" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAQAAAAAAAEAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0013_14" Collapsed="true">
+    <Position X="25.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAwAAAAAAAAACAAAAAAAgAAAAAAAgCAAAQAAQAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0013_17" Collapsed="true">
+    <Position X="15.5" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJQCKAFAAAAAAQBCACAAAAAIEAIABGAACAEMEIABAGE=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="uv_fs_event" Collapsed="true">
+    <Position X="41.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="uv_fs_event_flags" Collapsed="true">
+    <Position X="43.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAABAQAAAAAAAA=</HashCode>
+      <FileName>D:\Git\maraton\src\include\uv.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SESSIONTYPE" Collapsed="true">
+    <Position X="40" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>D:\Git\maraton\src\network\Session.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

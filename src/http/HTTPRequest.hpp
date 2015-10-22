@@ -68,6 +68,7 @@ public:
                 }
                 add_sequeue( *pdata );
             }break;
+
             case HTTPPARSESTATE::PATH: {
                 if ( *pdata == ' ' )
                 {
@@ -81,6 +82,7 @@ public:
                 }
                 add_sequeue( *pdata );
             }break;
+
             case HTTPPARSESTATE::VERSION: {
                 if ( *pdata == '\n' )
                 {
@@ -91,7 +93,7 @@ public:
                 }
                 add_sequeue( *pdata );
             }break;
-                //property
+
             case HTTPPARSESTATE::HEADER_KEY: {
                 if ( *pdata == ':' )
                 {
@@ -122,6 +124,7 @@ public:
                 }
                 add_sequeue( *pdata );
             }break;
+
             case HTTPPARSESTATE::HEADER_VALUE: {
                 if ( *pdata == '\n' )
                 {
@@ -138,7 +141,7 @@ public:
 
                 add_sequeue( *pdata );
             }break;
-                //body
+
             case HTTPPARSESTATE::BODY: {
                 if ( data_len == 0 )
                 {

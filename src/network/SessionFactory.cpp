@@ -10,15 +10,18 @@ Session * SessionFactory::create( uv_tcp_t* conn , SESSIONTYPE type )
     {
     case MASTER:
         return new MasterSession( conn );
-    break;
+        break;
+
     case RESTAPI:
         return new HTTPSession( conn );
-    break;
+        break;
+
     case EXECUTOR:
         return new ExecutorSession( conn );
-    break;
+        break;
+
     default:
-    break;
+        break;
     }
     
     return nullptr;

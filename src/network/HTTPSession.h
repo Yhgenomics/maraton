@@ -18,15 +18,13 @@ public:
 
     HTTPSession( uv_tcp_t* conn );
     virtual ~HTTPSession() override;
-
-    // Í¨¹ý Session ¼Ì³Ð
-    virtual void on_recv( int len ) override;
+     
+    virtual void on_recv(const char* data, int len ) override;
     virtual void run() override;
 
 private:
-    HTTPHandler* handler;
 
-};
-
+    HTTPHandler* handler; 
+}; 
 
 #endif //HTTP_SESSION_H_H_ 

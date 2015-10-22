@@ -7,6 +7,7 @@
 #ifndef MESSAGE_H_
 #define MESSAGE_H_ 
 
+#include <string.h>
 #include "maraton.h"
 
 class Message
@@ -14,10 +15,10 @@ class Message
 public :
 
     //deserilize
-    Message( nlohmann::basic_json<> json );
+    Message( const std::string json_str );
 
     //serilize
-    Message( size_t command, size_t status);
+    Message( const std::string version, size_t command, size_t status);
 
     Message( Message& message);
     Message( Message&& message );
@@ -30,9 +31,11 @@ public :
 
     size_t command() { return this->command_; };
     size_t status() { return this->status_; };
+    std::string version() { return this->version_; }
 
 protected:
 
+    std::string version_;
     size_t command_;
     size_t status_;
 

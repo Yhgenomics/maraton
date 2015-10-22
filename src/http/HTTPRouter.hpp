@@ -16,9 +16,6 @@ private:
 
     typedef std::function<void( HTTPRequest* req, HTTPResponse* rep )> router_req_rep_cb;
     typedef std::function<void( HTTPResponse* rep )> router_rep_cb;
-    //typedef void ( *router_req_rep_cb )( HTTPRequest* req, HTTPResponse* rep );
-    //typedef void ( *router_rep_cb )( HTTPResponse* rep );
-
 
     struct router_path
     {
@@ -90,6 +87,7 @@ public:
     {
         this->request_ = new HTTPRequest();
     }
+
     ~HTTPRouter()
     {
         delete this->request_;
@@ -125,7 +123,6 @@ public:
     {
         this->add_cb( path, "POST", cb );
     }
-
 };
 
 #endif // !HTTP_ROUTER_H_

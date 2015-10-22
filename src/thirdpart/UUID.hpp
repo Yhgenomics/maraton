@@ -1,3 +1,10 @@
+/* * * * * * * * * * * * * * * *
+* YHGenomics Inc.
+* Author     : yang shubo
+* Date       : 2015-10-22
+* Description:
+* * * * * * * * * * * * * * * */
+
 #ifndef UUID_HPP_
 #define UUID_HPP_
 
@@ -10,82 +17,44 @@ class UUID
 {
 public:
 
-    static string create() {
-        char buf[37];
+    static string create() 
+    {
+        char buf[UUID_LEN];
         const char *c = "yhgenomics";
         char *p = buf;
         int n;
-        for ( n = 0; n < 16; ++n )
-        {
-            int b = rand() % 255;
-            switch ( n )
-            {
-            case 6:
-            sprintf( p, "4%x", b % 15 );
-            break;
-            case 8:
-            sprintf( p, "%c%x", c[rand() % strlen( c )], b % 15 );
-            break;
-            default:
-            sprintf( p, "%02x", b );
-            break;
-            }
-            p += 2;
-            switch ( n )
-            {
-            case 3:
-            case 5:
-            case 7:
-            case 9:
-            //*p++ = '-';
-            break;
-            }
-        }
-        *p = 0;
-        return string( buf );
-    }
 
-    static string create_format() {
-        char buf[37];
-        const char *c = "yhgenomics";
-        char *p = buf;
-        int n;
         for ( n = 0; n < 16; ++n )
         {
-            int b = rand() % 255;
+            int seed = rand() % 255;
             switch ( n )
             {
             case 6:
-            sprintf( p, "4%x", b % 15 );
-            break;
+                sprintf( p, "4%x", seed % 15 );
+                break;
+
             case 8:
-            sprintf( p, "%c%x", c[rand() % strlen( c )], b % 15 );
-            break;
+                sprintf( p, "%c%x", c[rand() % strlen( c )], seed % 15 );
+                break;
+
             default:
-            sprintf( p, "%02x", b );
-            break;
+                sprintf( p, "%02x", seed );
+                break;
             }
+
             p += 2;
-            switch ( n )
-            {
-            case 3:
-            case 5:
-            case 7:
-            case 9:
-            *p++ = '-';
-            break;
-            }
         }
+
         *p = 0;
         return string( buf );
-    }
+    } 
 
 private:
 
+    const static int UUID_LEN = 37;
+
     UUID() {};
     ~UUID() {};
-
-
 };
 
-#endif //UUID_HPP_
+#endif // !UUID_HPP_

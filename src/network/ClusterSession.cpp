@@ -10,40 +10,42 @@ ClusterSession::~ClusterSession()
 {
 }
 
-void ClusterSession::on_recv( int len )
+void ClusterSession::on_recv( const char* data, int len )
 {
-    circle_buffer_.push( this->recv_buffer_, len );
+    circle_buffer_.push( data, len );
 
     switch ( this->read_state_ )
     {
     case ES_READSTATE::FLAG:
-    {
-        if ( this->try_read_flag() )
         {
-            this->read_state_ = ES_READSTATE::HEAD;
+            if ( this->try_read_flag() )
+            {
+                this->read_state_ = ES_READSTATE::HEAD;
+            }
         }
-    }
-    break;
-    case ES_READSTATE::HEAD:
-    {
-        if ( this->try_read_head() )
-        {
-            this->read_state_ = ES_READSTATE::BODY;
-        }
-    }
-    break;
-    case ES_READSTATE::BODY:
-    {
-        if ( this->try_read_body() )
-        {
-            this->read_state_ = ES_READSTATE::FLAG;
-        }
-    }
-    break;
-    default:
-    break;
-    }
+        break;
 
+    case ES_READSTATE::HEAD:
+        {
+            if ( this->try_read_head() )
+            {
+                this->read_state_ = ES_READSTATE::BODY;
+            }
+        }
+        break;
+
+    case ES_READSTATE::BODY:
+        {
+            if ( this->try_read_body() )
+            {
+                this->read_state_ = ES_READSTATE::FLAG;
+            }
+        }
+        break;
+
+    default:
+        break;
+    } 
 }
 
 void ClusterSession::run()

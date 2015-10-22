@@ -184,10 +184,13 @@
     <ClInclude Include="..\src\utils\Buffer.hpp" />
     <ClInclude Include="..\src\utils\CircleBuffer.hpp" />
     <ClInclude Include="..\src\utils\Logger.hpp" />
-    <ClInclude Include="..\src\utils\Macro.h" />
+    <ClInclude Include="..\src\utils\Macros.h" />
     <ClInclude Include="..\src\utils\Manager.hpp" />
     <ClInclude Include="..\src\utils\Singleton.hpp" />
     <ClInclude Include="..\src\utils\Zlib.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

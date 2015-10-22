@@ -1,3 +1,10 @@
+/* * * * * * * * * * * * * * * *
+* YHGenomics Inc.
+* Author     : yang shubo
+* Date       : 2015-10-22
+* Description:
+* * * * * * * * * * * * * * * */
+
 #ifndef UV_SOCK_SERVICE_H_
 #define UV_SOCK_SERVICE_H_
 
@@ -21,7 +28,8 @@ namespace Core
 
         UVSockService( UVSockService& ) = delete;
         UVSockService( UVSockService&& ) = delete;
-        UVSockService operator = ( UVSockService ) = delete;
+        UVSockService& operator = ( UVSockService &) = delete;
+        UVSockService& operator = ( UVSockService &&) = delete;
 
         bool listen( std::string ip, int port );
         bool connect( std::string ip, int port );
@@ -47,7 +55,6 @@ namespace Core
         struct sockaddr_in addr_in;
         uv_tcp_t* socket_;
         SESSIONTYPE session_type_;
-
     };
 }
 

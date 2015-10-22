@@ -23,11 +23,14 @@ bool Core::UVSockService::listen( std::string ip, int port )
     uv_ip4_addr( ip.c_str(), port, &addr_in );
 
     uv_tcp_bind( this->socket_, ( const struct sockaddr* )&addr_in, 0 );
-    int r = uv_listen( ( uv_stream_t* )this->socket_, 10000, Core::UVSockService::uv_connection_cb_process );
+    int result = uv_listen( ( uv_stream_t* )this->socket_, 
+                       10000, 
+                       Core::UVSockService::uv_connection_cb_process );
 
     this->socket_->data = this;
 
-    if ( r ) {
+    if ( result > 0 )
+    {
         Logger::error( "Can't create port %d", port );
         return false;
     }
@@ -42,6 +45,7 @@ bool Core::UVSockService::connect( std::string ip, int port )
     this->socket_ = new uv_tcp_t();
     uv_tcp_init( this->loop_, this->socket_ );
 
+    //mem leak
     uv_connect_t* connect = ( uv_connect_t* ) malloc( sizeof( uv_connect_t ) );
 
     uv_ip4_addr( ip.c_str(), port, &addr_in );
@@ -71,7 +75,8 @@ SESSIONTYPE Core::UVSockService::session_type()
 void Core::UVSockService::uv_connection_cb_process( uv_stream_t * server, int status )
 {
 
-    if ( status < 0 ) {
+    if ( status < 0 )
+    {
         return;
     }
 
@@ -88,7 +93,9 @@ void Core::UVSockService::uv_connection_cb_process( uv_stream_t * server, int st
 
     if ( uv_accept( server, ( uv_stream_t* ) client ) == 0 ) 
     {
-        uv_read_start( ( uv_stream_t* ) client, Core::UVSockService::uv_alloc_cb_process, Core::UVSockService::uv_read_cb_process );
+        uv_read_start( ( uv_stream_t* ) client, 
+                       Core::UVSockService::uv_alloc_cb_process, 
+                       Core::UVSockService::uv_read_cb_process );
     }
     else 
     {
@@ -118,12 +125,15 @@ void Core::UVSockService::uv_read_cb_process( uv_stream_t * stream, ssize_t nrea
 {
     Session* session = static_cast< Session* >( stream->data );
 
-    if ( nread < 0 )
+    if ( static_cast< int >( nread ) < 0 )
     {
+        printf( "[%d]%s\r\n", session->id(), uv_strerror( nread ) );
+        uv_read_stop( stream );
+        session->close();
         return;
     }
 
-    session->on_recv( static_cast< int >( nread ) );
+    session->on_recv( buf->base, static_cast< int >( nread ) );
 }
 
 void Core::UVSockService::uv_close_cb_process( uv_handle_t * handle )
@@ -131,5 +141,7 @@ void Core::UVSockService::uv_close_cb_process( uv_handle_t * handle )
     Session* session = static_cast< Session* >( handle->data );
 
     SessionManager::instance()->remove( session );
+
+    handle->data = nullptr;
 }
 

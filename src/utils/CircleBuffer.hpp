@@ -1,7 +1,14 @@
+/* * * * * * * * * * * * * * * *
+* YHGenomics Inc.
+* Author     : yang shubo
+* Date       : 2015-10-22
+* Description:
+* * * * * * * * * * * * * * * */
+
 #ifndef NETWORK_DATA_BUILDER_H_
 #define NETWORK_DATA_BUILDER_H_
 
-#include "Macro.h"
+#include "Macros.h"
 #include <memory.h>
 
 // in some cases two tcp message will be combined into one or chopped
@@ -9,13 +16,18 @@
 class CircleBuffer
 {
 public:
-
+     
     CircleBuffer()
     {
-        this->circle_buffer_ = new char[this->buffer_length_];
+        static char* CircleBufferBuffer = new char[CIRCLEBUFFERBUFFER_LEN];
+        static int pos = 0;
+
+        this->circle_buffer_ = ( CircleBufferBuffer + pos );
+        pos += this->buffer_length_;
         this->available_len_ = this->buffer_length_;
         this->used_len_ = 0;
     }
+
     ~CircleBuffer()
     {
         if ( this->circle_buffer_ != nullptr )
@@ -32,7 +44,6 @@ public:
             throw "[CircleBuffer.cpp] not enough buffer";
             return false;
         }
-
 
         if ( tail_ + len > this->buffer_length_ )
         {
@@ -64,8 +75,8 @@ public:
             return nullptr;
         }
 
-        char* ret = new char[len];
-        int ret_pos = 0;
+        char* result = new char[len];
+        int result_pos = 0;
         char* phead = this->circle_buffer_ + this->head_;
 
         // there are two pices data
@@ -74,14 +85,14 @@ public:
         if ( ( this->head_ + len ) > this->buffer_length_ )
         {
             int end_len = this->buffer_length_ - this->head_;
-            memcpy( ret, phead + ret_pos, end_len );
-            ret_pos += this->buffer_length_ - this->head_;
-            memcpy( ret + ret_pos, this->circle_buffer_, ( len - end_len ) );
+            memcpy( result, phead + result_pos, end_len );
+            result_pos += this->buffer_length_ - this->head_;
+            memcpy( result + result_pos, this->circle_buffer_, ( len - end_len ) );
         }
         // circle buffer contains all data inside
         else
         {
-            memcpy( ret, phead + ret_pos, len );
+            memcpy( result, phead + result_pos, len );
         }
 
         this->head_ = ( this->head_ + len ) % this->buffer_length_;
@@ -90,7 +101,7 @@ public:
 
         this->available_len_ = this->buffer_length_ - this->used_len_;
 
-        return ret;
+        return result;
     }
 
     int length() { return this->buffer_length_; };
@@ -106,14 +117,12 @@ private:
     CircleBuffer( CircleBuffer && ) = delete;
     CircleBuffer operator=( CircleBuffer ) = delete;
 
-   
     int used_len_ = 0;
     int available_len_ = 0;
 
     const int buffer_length_ = CIRCLE_BUFFER_SIZE;
 
     char* circle_buffer_ = nullptr;
-
 };
 
 #endif // !NETWORK_DATA_BUILDER_H_

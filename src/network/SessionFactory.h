@@ -24,8 +24,6 @@ private:
 
     SessionFactory();
     ~SessionFactory();
-
 };
-
 
 #endif //MASTER_SESSION_FACTORY_H_ 

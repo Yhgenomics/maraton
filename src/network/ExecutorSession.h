@@ -25,10 +25,9 @@ public:
 
     virtual void run() override;
      
-protected:
-    
-    // Í¨¹ý ClusterSession ¼Ì³Ð
-    virtual void on_data_recv( Buffer buffer ) override;
+protected: 
+
+    virtual void on_data_recv( const Buffer& buffer ) override;
     Executor* executor_;
 
 private:

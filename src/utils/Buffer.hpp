@@ -1,21 +1,31 @@
+/* * * * * * * * * * * * * * * *
+* YHGenomics Inc.
+* Author     : yang shubo
+* Date       : 2015-10-22
+* Description:
+* * * * * * * * * * * * * * * */
+
 #ifndef BYTES_HPP_
 #define BYTES_HPP_
 
-#include "Macro.h"
+#include "Macros.h"
 
 class Buffer
 {
 public:
+
     Buffer() {};
+
     ~Buffer()
     {
         SAFE_DELETE( this->raw_ );
     };
+
     Buffer(const Buffer & buffer )
     {
         this->raw( buffer.raw_, buffer.length_ );
     };
-    
+
     Buffer( Buffer&& buffer )
     {
         this->raw_ = buffer.raw_;
@@ -24,12 +34,14 @@ public:
         buffer.raw_ = nullptr;
         buffer.length_ = 0;
     }
+
     Buffer& operator=(const Buffer& buffer )
     {
         this->raw( buffer.raw_, buffer.length_ );
 
         return *this;
     }
+
     Buffer& operator=( Buffer&& buffer )
     {
         this->raw_ = buffer.raw_;
@@ -49,16 +61,14 @@ public:
         memcpy( this->raw_, data, length );
 
     }
-
-    const char* raw() { return this->raw_; };
+    
+    char* raw() { return this->raw_; };
     int length() { return this->length_; };
-
 
 private:
 
     char* raw_ = nullptr;
     int length_ = 0;
-
 };
 
 

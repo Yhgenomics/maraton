@@ -19,8 +19,7 @@ ExecutorSession::~ExecutorSession()
 }
 
 void ExecutorSession::run()
-{
-    
+{ 
     ClusterSession::run();
 
     std::unique_lock <std::mutex> locker( this->mtx );
@@ -36,22 +35,17 @@ void ExecutorSession::run()
     {
         auto json = nlohmann::json::parse( std::string( b.raw(), b.length() ) );
         executor_->message( json );
-    }
-
+    } 
 }
 
-void ExecutorSession::on_data_recv( Buffer buffer )
-{
-     
+void ExecutorSession::on_data_recv( const Buffer& buffer )
+{ 
     std::unique_lock <std::mutex> locker( this->mtx );
 
     locker.lock();
    
     buffers_.push_back( buffer );
     
-    locker.unlock();
-
-    //auto json = nlohmann::json::parse( std::string( buffer.raw, buffer.length ) );
-    //executor_->message( json );
+    locker.unlock(); 
 }
  

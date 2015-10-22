@@ -56,7 +56,6 @@ public:
         int len = 0;
         char* buffer = new char[HTTP_RESPONSE_CONTENT_SIZE];
         string head = "";
-        char* p = buffer;
 
         head += "HTTP/1.0 "+ this->status_description( this->status_ ) + "\r\n";
 

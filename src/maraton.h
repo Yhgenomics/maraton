@@ -6,5 +6,6 @@
 #include "utils/Buffer.hpp"
 #include "utils/Manager.hpp"
 #include "utils/Timer.hpp"
+#include "utils/Types.h"
 
 #include "thirdpart/json.hpp"

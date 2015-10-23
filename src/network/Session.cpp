@@ -10,52 +10,46 @@
 Session::Session( uv_tcp_t * conn )
 {
     recv_buffer_ = new char[this->buffer_len()];
-    send_buffer_ = new char[this->buffer_len()];
-
-    send_req_ = new uv_write_t();
-    memset( send_req_, 0, sizeof( uv_write_t ) );
+  
     this->conn_ = conn;
 
     this->id_ = Session::create_session_id();
+
+    this->write_req_ = new uv_write_t();
 }
 
 Session::~Session()
 {
     SAFE_DELETE( this->recv_buffer_ );
-    SAFE_DELETE( this->send_buffer_ );
     SAFE_DELETE( this->conn_ );
-    SAFE_DELETE( this->send_req_ );
-}
- 
-void Session::on_recv( const char * data, int len )
-{ 
-
 }
 
 void Session::send( const char * data, int len )
-{
-    uv_buf_t buf;
-    int result; 
+{ 
+    //memset( this->write_req_ , 0, sizeof( uv_write_t ) );
 
-    buf.base = this->send_buffer_;
-    memcpy( this->send_buffer_, data, len );
-    buf.len = len;
+    uv_write_t* write_req_ = new uv_write_t();
+    memset( write_req_, 0, sizeof( uv_write_t ) );
 
-    while ( 1 ) 
+    uv_buf_t p_buf;
+    p_buf.base = new char[len];
+    memcpy( p_buf.base , data, len );
+    p_buf.len = len;
+
+    write_req_->data = p_buf.base;
+
+    int result = 1;
+    while ( result )
     {
-        result = uv_write( send_req_, ( uv_stream_t* )this->conn_, &buf, 1 , Core::UVSockService::uv_write_cb_process );
-        if ( result == 0 )
-        {
-            break;
-        }
+        result = uv_write( write_req_, ( uv_stream_t* )this->conn_, &p_buf, 1 , Core::UVSockService::uv_write_cb_process );
     }
 
-    //SAFE_DELETE( buf.base );
 }
 
 void Session::close()
 {
     uv_close( (uv_handle_t*)this->conn_, Core::UVSockService::uv_close_cb_process );
+    this->conn_ = nullptr;
 }
 
 int Session::create_session_id()

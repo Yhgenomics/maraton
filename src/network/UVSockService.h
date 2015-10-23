@@ -47,8 +47,6 @@ namespace Core
         static void uv_close_cb_process( uv_handle_t* handle );
         static void uv_write_cb_process( uv_write_t* req, int status );
 
-        static void uv_async_cb_process( uv_async_t* handle );
-
     private:
 
         uv_async_t exit_handle_;

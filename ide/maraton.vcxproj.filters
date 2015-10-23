@@ -199,6 +199,9 @@
     <ClInclude Include="..\src\master\Master.h">
       <Filter>master</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\utils\Types.h">
+      <Filter>utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

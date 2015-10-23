@@ -8,6 +8,7 @@
 #ifndef ZLIB_HPP_
 #define ZLIB_HPP_
 
+#include <memory>
 #include <memory.h>
 #include "Buffer.hpp"
 
@@ -17,18 +18,12 @@ public:
 
     Buffer compress( const char* data, int len)
     {
-        Buffer buffer;
-        buffer.raw( data, len );
-        
-        return buffer;
+        return std::move( Buffer( data, len ) );
     };
 
     Buffer uncompress( const char* data, int len)
     {
-        Buffer buffer;
-        buffer.raw( data, len );
-
-        return buffer;
+        return  std::move( Buffer( data, len ) );
     };
 };
 

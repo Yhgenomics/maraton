@@ -39,7 +39,6 @@ public:
         if ( available_length() < len )
         {
             throw "[CircleBuffer.cpp] not enough buffer";
-            return false;
         }
 
         if ( tail_ + len > this->buffer_length_ )

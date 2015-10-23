@@ -1,6 +1,5 @@
 #include "maraton.h"
 #include "network/UVSockService.h"
-#include "vld.h"
 
 #include "SessionManager.h"
 #include "ExecutorManager.h"
@@ -21,9 +20,17 @@ Buffer test_buffer()
     return b;
 }  
 
+#define SERVER
+void logic( uv_timer_t* handle )
+{
+    SessionManager::instance()->run();
+#ifdef SERVER
+    ExecutorManager::instance()->run();
+#endif
+}
+
 void test_server()
 {
-#define SERVER
 
 #ifdef SERVER
 
@@ -31,54 +38,42 @@ void test_server()
     
     service.listen( "0.0.0.0", 90 );
     service.listen( "0.0.0.0", 80 );
-
+   
 #else
 
-    Core::UVSockService client;
-    client.session_type( SESSIONTYPE::MASTER );
-    client.connect( "127.0.0.1", 90 );
+    Core::UVSockService service;
+    service.connect( "127.0.0.1", 90 );
 
 #endif
 
+    //std::thread thr( logic );
+    uv_timer_t timer;
+
+    uv_timer_init( service.loop() , &timer );
+
+    uv_timer_start( &timer, logic, 0, 1 );
+
     while ( 1 )
     {
-        service.run();
-        SessionManager::instance()->run();
-        ExecutorManager::instance()->run();
-        this_thread::sleep_for( std::chrono::milliseconds( 1 ) );
-    }
 
+#ifdef SERVER
+        
+        service.run();
+
+#else
+
+        service.run();
+
+#endif
+       
+        //this_thread::sleep_for( std::chrono::milliseconds( 1 ) );
+    }
+    
     //thr.join();
 }
 
-
-
 int main(int argc , char** argv)
-{
-
-    nlohmann::basic_json<> json = {
-        { "pi", 3.141 },
-        { "happy", true },
-        { "name", "Nielsr" },
-        { "nothing", nullptr },
-        { "answer", {
-            { "everything", 42 }
-        } },
-        { "list", { 1, 0, 2 } },
-        { "object", {
-            { "currency", "USD\r\n" },
-            { "value", 42.99 }
-        } }
-    };
-
-    json["data"] = "abcdefg";
-
-    auto f = json["object"]["value"].get<float>();
-    auto s = json["data"].get<std::string>();
-    std::string str = json.dump();
-
-    json.parse( "{ \"name\" : \"1231\", \"int32\":1234, \"float\":11.22, \"obj\":{ \"name\":\"123123\"} }" );
-
+{ 
     test_server();
 	return 0;
 }

@@ -27,7 +27,7 @@ public:
     
 protected:
      
-    virtual void on_data_recv( const Buffer& buffer ) override; 
+    virtual void on_data_recv( Buffer* buffer ) override; 
     Master* master_;
 };
 

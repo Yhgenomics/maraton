@@ -192,6 +192,7 @@
     <ClInclude Include="..\src\utils\Manager.hpp" />
     <ClInclude Include="..\src\utils\Singleton.hpp" />
     <ClInclude Include="..\src\utils\Timer.hpp" />
+    <ClInclude Include="..\src\utils\Types.h" />
     <ClInclude Include="..\src\utils\Zlib.hpp" />
   </ItemGroup>
   <ItemGroup>

@@ -4,6 +4,7 @@
 #include "Executor.h"
 #include "json.hpp"
 #include <string.h>
+#include <memory>
 
 ExecutorSession::ExecutorSession(uv_tcp_t * conn)
     : ClusterSession::ClusterSession(conn)
@@ -21,24 +22,12 @@ void ExecutorSession::run()
 { 
     ClusterSession::run();
 
-    std::unique_lock <std::mutex> locker( this->mtx );
-
-    std::vector<Buffer> tmp_v ( this->buffers_.begin(), this->buffers_.end() );
-    this->buffers_.clear();
-
-    locker.unlock();
-
-    for ( auto b : tmp_v)
-    {
-        executor_->message( std::string( b.raw(), b.length() ) );
-    } 
 }
 
-void ExecutorSession::on_data_recv( const Buffer& buffer )
+void ExecutorSession::on_data_recv( Buffer* buffer )
 { 
-    std::unique_lock <std::mutex> locker( this->mtx );
+    auto buf = buffer;
 
-    buffers_.push_back( buffer );
-    
+    executor_->message( std::string( buf->raw(), buf->length() ) );
 }
  

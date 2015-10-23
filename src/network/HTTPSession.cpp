@@ -2,7 +2,6 @@
 #include "stdio.h"
 #include "maraton.h"
 
-
 HTTPSession::HTTPSession( uv_tcp_t* conn )
     : Session::Session( conn )
 { 

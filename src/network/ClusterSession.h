@@ -3,6 +3,7 @@
 
 #include "maraton.h"
 #include "Session.h"
+#include "Message.h"
 
 class ClusterSession :
     public Session
@@ -16,9 +17,12 @@ public:
     virtual void run() override;
     virtual void send( const char* data, int len ) override;
 
+    void message( std::string json_str );
+    void send( Message* message );
+
 protected:
 
-    virtual void on_data_recv( const Buffer& buffer) = 0;
+    virtual void on_data_recv( Buffer* buffer) = 0;
 
 private:
 

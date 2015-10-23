@@ -26,10 +26,10 @@ public:
         printf( fmt, args );
         va_end( args );
         
-        printf( "\r\n\033[0m" );
+        printf( "\033[0m\r\n" );
     }
 
-    static void error( const char* fmt, ... )
+    static void error( const char* fmt, ...)
     {
         va_list args;
         
@@ -39,7 +39,7 @@ public:
         printf( fmt, args );
         va_end( args );
         
-        printf( "\r\n\033[0m" );
+        printf( "\033[0m\r\n" );
     }
 
 private:

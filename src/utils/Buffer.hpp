@@ -21,6 +21,11 @@ public:
         SAFE_DELETE( this->raw_ );
     };
 
+    Buffer( const char* data, int len )
+    {
+        this->raw( data, len );
+    };
+
     Buffer(const Buffer & buffer )
     {
         this->raw( buffer.raw_, buffer.length_ );
@@ -28,6 +33,8 @@ public:
 
     Buffer( Buffer&& buffer )
     {
+        SAFE_DELETE( this->raw_ );
+        
         this->raw_ = buffer.raw_;
         this->length_ = buffer.length_;
 
@@ -44,6 +51,8 @@ public:
 
     Buffer& operator=( Buffer&& buffer )
     {
+        SAFE_DELETE( this->raw_ );
+        
         this->raw_ = buffer.raw_;
         this->length_ = buffer.length_;
 
@@ -59,7 +68,6 @@ public:
         this->raw_ = new char[length];
         this->length_ = length;
         memcpy( this->raw_, data, length );
-
     }
     
     char* raw() { return this->raw_; };

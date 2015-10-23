@@ -29,6 +29,7 @@ void Master::run()
 
 void Master::message( std::string json_str )
 {
+    printf( "%s\r\n", json_str.c_str() );
 }
 
 void Master::send( Message* message )

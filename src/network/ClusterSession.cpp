@@ -98,22 +98,29 @@ void ClusterSession::send( const char * data, int len )
     SAFE_DELETE( package );
 }
 
+void ClusterSession::message( std::string json_str )
+{
+}
+
+void ClusterSession::send( Message * message )
+{
+
+}
+
 bool ClusterSession::try_read_flag()
 {
-    auto data = this->circle_buffer_.pop( 2 );
+    std::unique_ptr<char> data( this->circle_buffer_.pop( 2 ) );
 
     if ( data == nullptr )
     {
         return false;
     }
 
-    if ( data[0] == 'Y' && data[1] == 'H' )
+    if ( data.get()[0] == 'Y' && data.get()[1] == 'H' )
     {
-        SAFE_DELETE( data );
         return true;
     }
 
-    SAFE_DELETE( data );
     return false;
 }
 
@@ -141,18 +148,16 @@ bool ClusterSession::try_read_head()
 
 bool ClusterSession::try_read_body()
 {
-    auto data = this->circle_buffer_.pop( this->compressed_length_ );
+    std::unique_ptr<char> data( this->circle_buffer_.pop( this->compressed_length_ ) );
 
     if ( data == nullptr )
     {
         return false;
     }
 
-    auto raw_data = this->compressor_.uncompress( data, this->compressed_length_ );
+    auto raw_data = this->compressor_.uncompress( data.get() , this->compressed_length_ );
     
-    SAFE_DELETE( data );
-
-    this->on_data_recv( raw_data );
+    this->on_data_recv( &raw_data );
 
     return true;
 }

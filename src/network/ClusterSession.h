@@ -15,14 +15,13 @@ public:
 
     void on_recv( const char* data, int len ) override;
     virtual void run() override;
-    virtual void send( const char* data, int len ) override;
-
-    void message( std::string json_str );
+    void send( const char* data, int len ) override;
+    
     void send( Message* message );
 
 protected:
 
-    virtual void on_data_recv( Buffer* buffer) = 0;
+    virtual void message( Message* message ) = 0;
 
 private:
 
@@ -44,6 +43,7 @@ private:
     bool try_read_flag();
     bool try_read_head();
     bool try_read_body();
+    void invoke_message( std::string json );
 
 };
 

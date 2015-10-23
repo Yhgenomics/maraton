@@ -22,7 +22,8 @@ void MasterSession::run()
     this->master_->run();
 }
 
-void MasterSession::on_data_recv( Buffer* buffer )
+void MasterSession::message( Message * message )
 {
-    master_->message( std::string( buffer->raw(), buffer->length() ) );
+    
 }
+ 

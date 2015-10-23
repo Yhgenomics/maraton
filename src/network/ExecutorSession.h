@@ -28,7 +28,8 @@ public:
      
 protected: 
 
-    virtual void on_data_recv( Buffer* buffer ) override;
+    void message( Message* message ) override;
+
     Executor* executor_;
 
 private:

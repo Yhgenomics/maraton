@@ -50,7 +50,6 @@ protected:
     
     uv_tcp_t * conn_ = nullptr;
     uv_loop_t* loop_ = nullptr;
-    uv_write_t* write_req_ = nullptr;
 
     std::mutex mtx;
     std::list<Buffer*> send_data_buffer_;

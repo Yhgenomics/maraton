@@ -22,7 +22,7 @@ Message::Message( const std::string version, size_t command, size_t status )
 
 Message::Message( Message & message )
 {
-    this->raw_data_ = message.raw_data_;
+    this->raw_data_.parse( message.raw_data_.dump() );
     this->command_ = message.command_;
     this->status_ = message.status_;
 

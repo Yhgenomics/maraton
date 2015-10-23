@@ -24,10 +24,6 @@ void ExecutorSession::run()
 
 }
 
-void ExecutorSession::on_data_recv( Buffer* buffer )
-{ 
-    auto buf = buffer;
-
-    executor_->message( std::string( buf->raw(), buf->length() ) );
+void ExecutorSession::message( Message * message )
+{
 }
- 

@@ -11,6 +11,7 @@
 
 #include <string.h>
 #include "maraton.h"
+#include "Session.h"
 
 class Message
 {
@@ -24,6 +25,7 @@ public :
 
     Message( Message& message);
     Message( Message&& message );
+
     Message& operator = ( Message& message );
     Message& operator = ( Message&& message );
 
@@ -37,11 +39,16 @@ public :
 
     nlohmann::basic_json<>* data() { return &this->raw_data_; };
 
+    void owner( Session * session ) { this->owner_ = session; };
+    Session* owner() { return this->owner_; };
+
 protected:
 
     std::string version_;
     size_t command_;
     size_t status_;
+
+    Session* owner_ = nullptr;
 
     nlohmann::basic_json<> raw_data_;
 

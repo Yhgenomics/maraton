@@ -50,7 +50,6 @@ void ClusterSession::on_recv( const char* data, int len )
                 this->read_state_ = ES_READSTATE::FLAG;
                 continue;
             }
-
             return;
         }
         break;
@@ -71,7 +70,7 @@ void ClusterSession::run()
 void ClusterSession::send( const char * data, int len )
 {
     auto compressed_buffer = this->compressor_.compress( data, len );
-     
+
     //0-1 YH
     //2-3 Compressed Length
     //4-5 Oringal Length
@@ -97,14 +96,11 @@ void ClusterSession::send( const char * data, int len )
 
     SAFE_DELETE( package );
 }
-
-void ClusterSession::message( std::string json_str )
-{
-}
-
+ 
 void ClusterSession::send( Message * message )
 {
-
+    auto buf = message->bytes();
+    this->send( buf.raw(), buf.length() );
 }
 
 bool ClusterSession::try_read_flag()
@@ -157,7 +153,14 @@ bool ClusterSession::try_read_body()
 
     auto raw_data = this->compressor_.uncompress( data.get() , this->compressed_length_ );
     
-    this->on_data_recv( &raw_data );
+    invoke_message( std::string( raw_data.raw(), raw_data.length() ) );
 
     return true;
+}
+
+void ClusterSession::invoke_message( std::string json )
+{
+    Message message( json );
+    message.owner( this );
+    this->message( &message );
 }

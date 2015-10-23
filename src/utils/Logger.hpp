@@ -23,7 +23,7 @@ public:
         printf( "\033[1;33m[SYS]" );
         
         va_start( args, fmt );
-        printf( fmt, args );
+        printf( fmt, *args );
         va_end( args );
         
         printf( "\033[0m\r\n" );
@@ -36,7 +36,7 @@ public:
         printf( "\033[0;31m[ERROR]" );
         
         va_start( args, fmt );
-        printf( fmt, args );
+        printf( fmt, *args );
         va_end( args );
         
         printf( "\033[0m\r\n" );

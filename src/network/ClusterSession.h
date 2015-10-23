@@ -13,14 +13,14 @@ public:
     ClusterSession( uv_tcp_t* conn );
     virtual ~ClusterSession() override;
 
-    void on_recv( const char* data, int len ) override;
     virtual void run() override;
-    void send( const char* data, int len ) override;
     
     void send( Message* message );
 
 protected:
 
+    void on_recv( const char* data, int len ) override;
+    void send( const char* data, int len ) override;
     virtual void message( Message* message ) = 0;
 
 private:

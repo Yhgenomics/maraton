@@ -23,7 +23,7 @@ public:
 
     void run();
     void message( std::string json_str );
-    void send( Message&& message );
+    void send( Message message );
 
 private:
 

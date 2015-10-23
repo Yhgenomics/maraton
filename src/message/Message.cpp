@@ -1,11 +1,12 @@
 #include "Message.h"
+#include "ClusterSession.h"
 
 Message::Message(const std::string json_str )
 {
     this->raw_data_ = nlohmann::json::parse( json_str );;
 
-    this->status_ = this->raw_data_["command"];
-    this->command_ = this->raw_data_["status"];
+    this->status_ = this->raw_data_["status"];
+    this->command_ = this->raw_data_["command"];
 }
 
 Message::Message( const std::string version, size_t command, size_t status )
@@ -67,4 +68,14 @@ Buffer Message::bytes()
     buffer.raw( json.c_str(), static_cast< int >( json.length() ) + 1 );
 
     return buffer;
+}
+
+void Message::owner( ClusterSession * session )
+{
+    this->owner_ = session;
+}
+
+ClusterSession * Message::owner()
+{
+    return this->owner_;
 }

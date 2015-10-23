@@ -34,7 +34,6 @@ void Master::message( std::string json_str )
 
 void Master::send( Message* message )
 {
-    auto msg_send = message->bytes();
-    this->session_->send( msg_send.raw(), msg_send.length() );
+    this->session_->send( message );
 }
 

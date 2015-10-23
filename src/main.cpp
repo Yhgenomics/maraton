@@ -5,6 +5,7 @@
 #include "ExecutorManager.h"
 #include <thread>
 #include "json.hpp"
+#include "ExecutorSession.h"
 
 Buffer test_buffer()
 {
@@ -32,6 +33,9 @@ void logic( uv_timer_t* handle )
 void test_server()
 {
 
+    ExecutorSession session(NULL);
+    Session* s;
+    
 #ifdef SERVER
 
     Core::UVSockService service;

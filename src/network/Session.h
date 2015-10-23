@@ -34,16 +34,17 @@ public:
     int buffer_len() { return SESSION_BUFFER_SIZE; }
     char* recv_buffer() { return this->recv_buffer_; }
 
-    virtual void on_recv( const char* data, int len ) = 0;
     virtual void run() = 0;
 
-    virtual void send( const char* data, int len );
     virtual void close();
 
     int id() { return this->id_; };
 
 protected:
 
+    virtual void on_recv( const char* data, int len ) = 0;
+    virtual void send( const char* data, int len );
+    
     static int create_session_id(); 
 
     char* recv_buffer_ = nullptr;

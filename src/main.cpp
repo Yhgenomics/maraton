@@ -1,11 +1,15 @@
 #include "maraton.h"
 #include "network/UVSockService.h"
 
-#include "SessionManager.h"
+#include "SessionManager.hpp"
 #include "ExecutorManager.h"
 #include <thread>
 #include "json.hpp"
 #include "ExecutorSession.h"
+
+#include "ExecutorSession.h"
+#include "MasterSession.h"
+#include "HTTPSession.h"
 
 Buffer test_buffer()
 {
@@ -24,9 +28,16 @@ Buffer test_buffer()
 #define SERVER
 void logic( uv_timer_t* handle )
 {
-    SessionManager::instance()->run();
+   
 #ifdef SERVER
-    ExecutorManager::instance()->run();
+   
+    //SessionManager<HTTPSession>::instance()->run();
+    SessionManager<ExecutorSession>::instance()->run();
+    //ExecutorManager::instance()->run();
+#else
+
+    SessionManager<MasterSession*>::instance()->run();
+
 #endif
 }
 
@@ -59,16 +70,8 @@ void test_server()
 
     while ( 1 )
     {
-
-#ifdef SERVER
-        
+       
         service.run();
-
-#else
-
-        service.run();
-
-#endif
        
         //this_thread::sleep_for( std::chrono::milliseconds( 1 ) );
     }

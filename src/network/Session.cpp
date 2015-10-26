@@ -9,7 +9,7 @@
 
 Session::Session( uv_tcp_t * conn )
 {
-    recv_buffer_ = new char[this->buffer_len()];
+    this->recv_buffer_ = new char[this->buffer_len()];
   
     this->conn_ = conn;
 
@@ -47,7 +47,6 @@ void Session::send( const char * data, int len )
 void Session::close()
 {
     uv_close( (uv_handle_t*)this->conn_, Core::UVSockService::uv_close_cb_process );
-    this->conn_ = nullptr;
 }
 
 int Session::create_session_id()

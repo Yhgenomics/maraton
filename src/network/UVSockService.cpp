@@ -1,6 +1,8 @@
 #include "UVSockService.h"
-#include "SessionFactory.h"
-#include "SessionManager.h"
+#include "SessionManager.hpp"
+#include "ExecutorSession.h"
+#include "MasterSession.h"
+#include "HTTPSession.h"
 
 Core::UVSockService::UVSockService()
 {
@@ -62,20 +64,21 @@ bool Core::UVSockService::connect( std::string ip, int port )
 
     socket_->data = connect;
 
-    auto result = uv_tcp_connect( connect, socket_, ( const struct sockaddr* )&addr_in, Core::UVSockService::uv_connected_cb_process );
+    auto result = uv_tcp_connect( 
+        connect, socket_, 
+        ( const struct sockaddr* )&addr_in, 
+        Core::UVSockService::uv_connected_cb_process );
 
     return true;
 }
 
 void Core::UVSockService::run()
 { 
-    //uv_run( this->loop_, UV_RUN_NOWAIT );
     uv_run( this->loop_, UV_RUN_DEFAULT );
 }
 
 void Core::UVSockService::uv_connection_cb_process( uv_stream_t * server, int status )
 {
-
     if ( status < 0 )
     {
         return;
@@ -84,12 +87,28 @@ void Core::UVSockService::uv_connection_cb_process( uv_stream_t * server, int st
     listen_data* data = static_cast< listen_data* >( server->data );
 
     uv_tcp_t *client = new uv_tcp_t();
-    uv_tcp_init( ( uv_loop_t* ) data->loop, client );
+    uv_tcp_init( uv_default_loop(), client );
+    Session* session = nullptr;
 
-    Session* session = SessionFactory::instance()->create( client, data->port );
-    session->loop_ = data->loop;
-    
-    SessionManager::instance()->push( session );
+    switch ( data->port )
+    {
+    case MASTER:
+        session = SessionManager<MasterSession>::instance()->create( client );
+        break;
+
+    case RESTAPI:
+        session = SessionManager<HTTPSession>::instance()->create( client );
+        break;
+
+    case EXECUTOR:
+        session = SessionManager<ExecutorSession>::instance()->create( client );
+        break;
+
+    default:
+        break;
+    }
+
+    session->loop_ = uv_default_loop();
 
     client->data = static_cast< void* >( session );
 
@@ -107,7 +126,7 @@ void Core::UVSockService::uv_connection_cb_process( uv_stream_t * server, int st
 }
 
 void Core::UVSockService::uv_connected_cb_process( uv_connect_t * req, int status )
-{
+{ 
     if ( status < 0 )
     {
         Logger::error( "%s", uv_strerror( static_cast< int >( status ) ) );
@@ -124,17 +143,17 @@ void Core::UVSockService::uv_connected_cb_process( uv_connect_t * req, int statu
 
     uv_tcp_t* client = static_cast< uv_tcp_t* >( req->data );
 
-    Session* session = SessionFactory::instance()->create( client, SESSIONTYPE::MASTER );
+    auto session = SessionManager<MasterSession>::instance()->create( client );
 
     session->loop_ = client->loop;
 
     client->data = session;
 
+
     uv_read_start( ( uv_stream_t* ) client,
                    Core::UVSockService::uv_alloc_cb_process,
                    Core::UVSockService::uv_read_cb_process );
 
-    SessionManager::instance()->push( session );
 }
 
 void Core::UVSockService::uv_alloc_cb_process( uv_handle_t * handle, size_t suggested_size, uv_buf_t * buf )
@@ -143,7 +162,6 @@ void Core::UVSockService::uv_alloc_cb_process( uv_handle_t * handle, size_t sugg
 
     buf->base = session->recv_buffer();
     buf->len = session->buffer_len();
-
 }
 
 void Core::UVSockService::uv_read_cb_process( uv_stream_t * stream, ssize_t nread, const uv_buf_t * buf )
@@ -157,8 +175,7 @@ void Core::UVSockService::uv_read_cb_process( uv_stream_t * stream, ssize_t nrea
         session->close();
         return;
     }
-    //printf( "[%d] data recived \r\n" , session->id() );
-    //return;
+    
     session->on_recv( buf->base, static_cast< int >( nread ) );
 }
 
@@ -166,7 +183,9 @@ void Core::UVSockService::uv_close_cb_process( uv_handle_t * handle )
 {
     Session* session = static_cast< Session* >( handle->data );
 
-    SessionManager::instance()->remove( session );
+    session->shutdown();
+
+    SAFE_DELETE( session );
 
     handle->data = nullptr;
 }
@@ -176,9 +195,8 @@ void Core::UVSockService::uv_write_cb_process( uv_write_t * req, int status )
     if ( status < 0 )
     {
         return;
-    }
+    } 
 
-    //SAFE_DELETE( req->write_buffer.base );
     SAFE_DELETE( req->data );
     SAFE_DELETE( req );
 }

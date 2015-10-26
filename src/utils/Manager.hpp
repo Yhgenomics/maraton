@@ -24,7 +24,7 @@ public:
         this->instance_.push_back( instance );
     }
 
-    virtual void remove( T* instance )
+    virtual bool pop( T* instance )
     {
         std::unique_lock<std::mutex> lck( mtx );
 
@@ -32,12 +32,11 @@ public:
 
         while ( itr != this->instance_.end() )
         {
-
+            
             if ( *itr == instance )
             {
                 itr = this->instance_.erase( itr );
-                SAFE_DELETE( instance );
-                break;
+                return true;
             }
             else
             {
@@ -45,6 +44,7 @@ public:
             }
         }
 
+        return false;
     }
 
 protected:

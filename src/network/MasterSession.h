@@ -24,10 +24,12 @@ public:
     virtual ~MasterSession() override;
 
     virtual void run() override;
+    virtual void close() override;
 
 protected:
 
     virtual void message( Message* message ) override;
+    virtual void shutdown() override ;
 
     Master* master_;
 };

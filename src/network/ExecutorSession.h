@@ -29,7 +29,7 @@ public:
 protected: 
 
     void message( Message* message ) override;
-
+    virtual void shutdown() override;
     Executor* executor_;
 
 private:

@@ -145,7 +145,6 @@
     <ClCompile Include="..\src\network\MasterSession.cpp" />
     <ClCompile Include="..\src\network\SessionFactory.cpp" />
     <ClCompile Include="..\src\network\Session.cpp" />
-    <ClCompile Include="..\src\network\SessionManager.cpp" />
     <ClCompile Include="..\src\network\UVSockService.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -181,7 +180,7 @@
     <ClInclude Include="..\src\network\MasterSession.h" />
     <ClInclude Include="..\src\network\SessionFactory.h" />
     <ClInclude Include="..\src\network\Session.h" />
-    <ClInclude Include="..\src\network\SessionManager.h" />
+    <ClInclude Include="..\src\network\SessionManager.hpp" />
     <ClInclude Include="..\src\network\UVSockService.h" />
     <ClInclude Include="..\src\thirdpart\json.hpp" />
     <ClInclude Include="..\src\thirdpart\UUID.hpp" />

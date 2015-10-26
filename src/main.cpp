@@ -42,11 +42,8 @@ void logic( uv_timer_t* handle )
 }
 
 void test_server()
-{
+{ 
 
-    ExecutorSession session(NULL);
-    Session* s;
-    
 #ifdef SERVER
 
     Core::UVSockService service;

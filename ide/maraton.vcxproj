@@ -143,7 +143,6 @@
     <ClCompile Include="..\src\network\ExecutorSession.cpp" />
     <ClCompile Include="..\src\network\HTTPSession.cpp" />
     <ClCompile Include="..\src\network\MasterSession.cpp" />
-    <ClCompile Include="..\src\network\SessionFactory.cpp" />
     <ClCompile Include="..\src\network\Session.cpp" />
     <ClCompile Include="..\src\network\UVSockService.cpp" />
   </ItemGroup>
@@ -178,7 +177,6 @@
     <ClInclude Include="..\src\network\ExecutorSession.h" />
     <ClInclude Include="..\src\network\HTTPSession.h" />
     <ClInclude Include="..\src\network\MasterSession.h" />
-    <ClInclude Include="..\src\network\SessionFactory.h" />
     <ClInclude Include="..\src\network\Session.h" />
     <ClInclude Include="..\src\network\SessionManager.hpp" />
     <ClInclude Include="..\src\network\UVSockService.h" />

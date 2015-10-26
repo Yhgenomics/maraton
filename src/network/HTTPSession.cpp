@@ -7,13 +7,14 @@ HTTPSession::HTTPSession( uv_tcp_t* conn )
 { 
     this->handler = new HTTPHandler( this );
     this->handler->router()->response( 
-        [&] ( HTTPResponse* rep ) { 
+        [this] ( HTTPResponse* rep ) { 
             auto buffer = rep->bytes();
             this->send( buffer.raw(), buffer.length() );
             this->close();
         }
     );
-}
+    printf( "Session[%d] incoming request...\r\n", this->id() );
+}              
 
 HTTPSession::~HTTPSession()
 {

@@ -77,6 +77,11 @@ void Core::UVSockService::run()
     uv_run( this->loop_, UV_RUN_DEFAULT );
 }
 
+uv_loop_t * Core::UVSockService::loop()
+{
+    return uv_default_loop();
+}
+
 void Core::UVSockService::uv_connection_cb_process( uv_stream_t * server, int status )
 {
     if ( status < 0 )
@@ -88,35 +93,38 @@ void Core::UVSockService::uv_connection_cb_process( uv_stream_t * server, int st
 
     uv_tcp_t *client = new uv_tcp_t();
     uv_tcp_init( uv_default_loop(), client );
-    Session* session = nullptr;
-
-    switch ( data->port )
-    {
-    case MASTER:
-        session = SessionManager<MasterSession>::instance()->create( client );
-        break;
-
-    case RESTAPI:
-        session = SessionManager<HTTPSession>::instance()->create( client );
-        break;
-
-    case EXECUTOR:
-        session = SessionManager<ExecutorSession>::instance()->create( client );
-        break;
-
-    default:
-        break;
-    }
-
-    session->loop_ = uv_default_loop();
-
-    client->data = static_cast< void* >( session );
+    
 
     if ( uv_accept( server, ( uv_stream_t* ) client ) == 0 ) 
     {
         uv_read_start( ( uv_stream_t* ) client, 
                        Core::UVSockService::uv_alloc_cb_process, 
                        Core::UVSockService::uv_read_cb_process );
+
+        Session* session = nullptr;
+
+        switch ( data->port )
+        {
+        case MASTER:
+            session = SessionManager<MasterSession>::instance()->create( client );
+            break;
+
+        case RESTAPI:
+            session = SessionManager<HTTPSession>::instance()->create( client );
+            break;
+
+        case EXECUTOR:
+            session = SessionManager<ExecutorSession>::instance()->create( client );
+            break;
+
+        default:
+            break;  
+        }
+
+        session->loop_ = uv_default_loop();
+
+        client->data = static_cast< void* >( session );
+
     }
     else 
     {
@@ -129,7 +137,7 @@ void Core::UVSockService::uv_connected_cb_process( uv_connect_t * req, int statu
 { 
     if ( status < 0 )
     {
-        Logger::error( "%s", uv_strerror( static_cast< int >( status ) ) );
+        //Logger::error( "%s", uv_strerror( static_cast< int >( status ) ) );
 
         auto sock = ( uv_tcp_t* ) req->data;
 
@@ -148,7 +156,6 @@ void Core::UVSockService::uv_connected_cb_process( uv_connect_t * req, int statu
     session->loop_ = client->loop;
 
     client->data = session;
-
 
     uv_read_start( ( uv_stream_t* ) client,
                    Core::UVSockService::uv_alloc_cb_process,
@@ -170,7 +177,7 @@ void Core::UVSockService::uv_read_cb_process( uv_stream_t * stream, ssize_t nrea
 
     if ( static_cast< int >( nread ) < 0 )
     {
-        printf( "[%d]%s\r\n", session->id(), uv_strerror( static_cast< int >( nread ) ) );
+        //printf( "[%d]%s\r\n", session->id(), uv_strerror( static_cast< int >( nread ) ) );
         uv_read_stop( stream );
         session->close();
         return;
@@ -182,18 +189,17 @@ void Core::UVSockService::uv_read_cb_process( uv_stream_t * stream, ssize_t nrea
 void Core::UVSockService::uv_close_cb_process( uv_handle_t * handle )
 {
     Session* session = static_cast< Session* >( handle->data );
+    handle->data = nullptr;
 
     session->shutdown();
 
     SAFE_DELETE( session );
-
-    handle->data = nullptr;
 }
 
 void Core::UVSockService::uv_write_cb_process( uv_write_t * req, int status )
 {
     if ( status < 0 )
-    {
+    {   
         return;
     } 
 

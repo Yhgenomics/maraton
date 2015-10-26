@@ -19,20 +19,15 @@ public:
 
     virtual void push( T* instance )
     {
-        std::unique_lock<std::mutex> lck( mtx );
-
         this->instance_.push_back( instance );
     }
 
     virtual bool pop( T* instance )
     {
-        std::unique_lock<std::mutex> lck( mtx );
-
         typename std::vector<T*>::iterator itr = this->instance_.begin();
 
         while ( itr != this->instance_.end() )
         {
-            
             if ( *itr == instance )
             {
                 itr = this->instance_.erase( itr );
@@ -51,8 +46,6 @@ protected:
 
     std::vector<T*> instances() 
     {
-        std::unique_lock<std::mutex> lck( mtx );
-
         std::vector<T*> vret( this->instance_.begin(), this->instance_.end() );
 
         return vret;

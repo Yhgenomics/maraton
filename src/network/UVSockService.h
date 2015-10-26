@@ -35,7 +35,7 @@ namespace Core
         bool connect( std::string ip, int port );
         void run();
 
-        uv_loop_t* loop() { return this->loop_; };
+        uv_loop_t* loop();
 
     protected:
 

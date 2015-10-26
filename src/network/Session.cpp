@@ -14,6 +14,8 @@ Session::Session( uv_tcp_t * conn )
     this->conn_ = conn;
 
     this->id_ = Session::create_session_id();
+
+    printf( "Session[%d] connected...\r\n", this->id() );
 }
 
 Session::~Session()

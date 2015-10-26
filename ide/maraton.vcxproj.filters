@@ -37,9 +37,6 @@
     <ClCompile Include="..\src\network\Session.cpp">
       <Filter>network</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\network\SessionFactory.cpp">
-      <Filter>network</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\network\HTTPSession.cpp">
       <Filter>network</Filter>
     </ClCompile>
@@ -125,9 +122,6 @@
       <Filter>network</Filter>
     </ClInclude>
     <ClInclude Include="..\src\network\Session.h">
-      <Filter>network</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\network\SessionFactory.h">
       <Filter>network</Filter>
     </ClInclude>
     <ClInclude Include="..\src\http\HTTPRequest.hpp">

@@ -4,7 +4,6 @@
 ClusterSession::ClusterSession( uv_tcp_t * conn )
     : Session::Session( conn )
 {
-
 }
 
 ClusterSession::~ClusterSession()
@@ -60,12 +59,7 @@ void ClusterSession::on_recv( const char* data, int len )
 
     } 
     while ( true );
-}
-
-void ClusterSession::run()
-{
-    return;
-}
+} 
 
 void ClusterSession::send( const char * data, int len )
 {

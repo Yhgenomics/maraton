@@ -60,10 +60,15 @@ void test_server()
 
     //std::thread thr( logic );
     uv_timer_t timer;
-
     uv_timer_init( service.loop() , &timer );
-
     uv_timer_start( &timer, logic, 0, 1 );
+
+    SessionManager<ExecutorSession>::instance()->on_create( 
+        [] ( Session* session ) { 
+            printf( "Session %d callback", session->id() );
+        } 
+    );
+
 
     while ( 1 )
     {

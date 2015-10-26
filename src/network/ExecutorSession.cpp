@@ -10,21 +10,11 @@
 ExecutorSession::ExecutorSession(uv_tcp_t * conn)
     : ClusterSession::ClusterSession(conn)
 {
-    executor_ = new Executor( this );
-    //ExecutorManager::instance()->push( executor_ );
 }
 
 ExecutorSession::~ExecutorSession()
 {
-    SAFE_DELETE( executor_ );
 }
-
-void ExecutorSession::run()
-{ 
-    ClusterSession::run();
-
-}
- 
 
 void ExecutorSession::message( Message * message )
 {

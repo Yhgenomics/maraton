@@ -14,8 +14,6 @@
 #include "ClusterSession.h"
 #include "uv.h"
 
-class Executor;
-
 class ExecutorSession :
     public ClusterSession
 {
@@ -30,7 +28,6 @@ protected:
 
     void message( Message* message ) override;
     virtual void shutdown() override;
-    Executor* executor_;
 
 private:
 

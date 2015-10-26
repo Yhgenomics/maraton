@@ -13,8 +13,6 @@ public:
     ClusterSession( uv_tcp_t* conn );
     virtual ~ClusterSession() override;
 
-    virtual void run() override;
-    
     void send( Message* message );
 
 protected:

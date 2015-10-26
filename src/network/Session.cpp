@@ -26,8 +26,6 @@ Session::~Session()
 
 void Session::send( const char * data, int len )
 { 
-    //memset( this->write_req_ , 0, sizeof( uv_write_t ) );
-
     uv_write_t* write_req_ = new uv_write_t();
     memset( write_req_, 0, sizeof( uv_write_t ) );
 

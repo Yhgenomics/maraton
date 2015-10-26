@@ -96,11 +96,7 @@ void Core::UVSockService::uv_connection_cb_process( uv_stream_t * server, int st
     
 
     if ( uv_accept( server, ( uv_stream_t* ) client ) == 0 ) 
-    {
-        uv_read_start( ( uv_stream_t* ) client, 
-                       Core::UVSockService::uv_alloc_cb_process, 
-                       Core::UVSockService::uv_read_cb_process );
-
+    { 
         Session* session = nullptr;
 
         switch ( data->port )
@@ -124,6 +120,10 @@ void Core::UVSockService::uv_connection_cb_process( uv_stream_t * server, int st
         session->loop_ = uv_default_loop();
 
         client->data = static_cast< void* >( session );
+
+        uv_read_start( ( uv_stream_t* ) client,
+                       Core::UVSockService::uv_alloc_cb_process,
+                       Core::UVSockService::uv_read_cb_process );
 
     }
     else 

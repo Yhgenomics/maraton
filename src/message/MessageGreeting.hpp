@@ -3,9 +3,8 @@
 
 #include "Message.h"
 #include "json.hpp"
-#include <stdlib.h>
-#include <iostream>
-#include <fstream>
+#include <string>
+using namespace std;
 
 namespace Protocol
 {

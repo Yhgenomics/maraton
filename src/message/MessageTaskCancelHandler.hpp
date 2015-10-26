@@ -1,7 +1,6 @@
-#ifndef Message_Task_Cancel_HANDLER_HPP_
-#define Message_Task_Cancel_HANDLER_HPP_
+#ifndef MESSAGE_TASK_CANCEL_HANDLER_HPP_
+#define MESSAGE_TASK_CANCEL_HANDLER_HPP_
 
-#include "stdlib.h"
 #include "MessageTaskCancel.hpp"
 
 namespace Protocol

@@ -1,7 +1,6 @@
-#ifndef Message_Intro_HANDLER_HPP_
-#define Message_Intro_HANDLER_HPP_
+#ifndef MESSAGE_INTRO_HANDLER_HPP_
+#define MESSAGE_INTRO_HANDLER_HPP_
 
-#include "stdlib.h"
 #include "MessageIntro.hpp"
 
 namespace Protocol

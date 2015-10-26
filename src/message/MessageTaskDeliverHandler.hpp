@@ -1,7 +1,6 @@
-#ifndef Message_Task_Deliver_HANDLER_HPP_
-#define Message_Task_Deliver_HANDLER_HPP_
+#ifndef MESSAGE_TASK_DELIVER_HANDLER_HPP_
+#define MESSAGE_TASK_DELIVER_HANDLER_HPP_
 
-#include "stdlib.h"
 #include "MessageTaskDeliver.hpp"
 
 namespace Protocol

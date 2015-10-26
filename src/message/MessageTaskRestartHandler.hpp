@@ -1,7 +1,6 @@
-#ifndef Message_Task_Restart_HANDLER_HPP_
-#define Message_Task_Restart_HANDLER_HPP_
+#ifndef MESSAGE_TASK_RESTART_HANDLER_HPP_
+#define MESSAGE_TASK_RESTART_HANDLER_HPP_
 
-#include "stdlib.h"
 #include "MessageTaskRestart.hpp"
 
 namespace Protocol

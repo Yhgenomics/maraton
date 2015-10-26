@@ -1,7 +1,6 @@
-#ifndef Message_Status_Report_HANDLER_HPP_
-#define Message_Status_Report_HANDLER_HPP_
+#ifndef MESSAGE_STATUS_REPORT_HANDLER_HPP_
+#define MESSAGE_STATUS_REPORT_HANDLER_HPP_
 
-#include "stdlib.h"
 #include "MessageStatusReport.hpp"
 
 namespace Protocol

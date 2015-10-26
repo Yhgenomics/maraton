@@ -1,7 +1,6 @@
-#ifndef Message_Exception_Report_HANDLER_HPP_
-#define Message_Exception_Report_HANDLER_HPP_
+#ifndef MESSAGE_EXCEPTION_REPORT_HANDLER_HPP_
+#define MESSAGE_EXCEPTION_REPORT_HANDLER_HPP_
 
-#include "stdlib.h"
 #include "MessageExceptionReport.hpp"
 
 namespace Protocol

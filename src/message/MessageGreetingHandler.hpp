@@ -1,7 +1,6 @@
-#ifndef Message_Greeting_HANDLER_HPP_
-#define Message_Greeting_HANDLER_HPP_
+#ifndef MESSAGE_GREETING_HANDLER_HPP_
+#define MESSAGE_GREETING_HANDLER_HPP_
 
-#include "stdlib.h"
 #include "MessageGreeting.hpp"
 
 namespace Protocol

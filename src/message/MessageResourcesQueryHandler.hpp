@@ -1,7 +1,6 @@
-#ifndef Message_Resources_Query_HANDLER_HPP_
-#define Message_Resources_Query_HANDLER_HPP_
+#ifndef MESSAGE_RESOURCES_QUERY_HANDLER_HPP_
+#define MESSAGE_RESOURCES_QUERY_HANDLER_HPP_
 
-#include "stdlib.h"
 #include "MessageResourcesQuery.hpp"
 
 namespace Protocol

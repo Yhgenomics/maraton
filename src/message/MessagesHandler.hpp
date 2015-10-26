@@ -20,6 +20,7 @@
 #include "MessageTaskQueryACKHandler.hpp"
 #include "MessageTaskRestartHandler.hpp"
 
+using namespace std;
 namespace Protocol
 {
     class MessagesHandler

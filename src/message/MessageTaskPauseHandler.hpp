@@ -1,7 +1,6 @@
-#ifndef Message_Task_Pause_HANDLER_HPP_
-#define Message_Task_Pause_HANDLER_HPP_
+#ifndef MESSAGE_TASK_PAUSE_HANDLER_HPP_
+#define MESSAGE_TASK_PAUSE_HANDLER_HPP_
 
-#include "stdlib.h"
 #include "MessageTaskPause.hpp"
 
 namespace Protocol

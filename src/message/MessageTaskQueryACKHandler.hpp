@@ -1,7 +1,6 @@
-#ifndef Message_Task_Query_ACK_HANDLER_HPP_
-#define Message_Task_Query_ACK_HANDLER_HPP_
+#ifndef MESSAGE_TASK_QUERY_ACK_HANDLER_HPP_
+#define MESSAGE_TASK_QUERY_ACK_HANDLER_HPP_
 
-#include "stdlib.h"
 #include "MessageTaskQueryACK.hpp"
 
 namespace Protocol

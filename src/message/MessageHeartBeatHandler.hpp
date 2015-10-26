@@ -1,7 +1,6 @@
-#ifndef Message_Heart_Beat_HANDLER_HPP_
-#define Message_Heart_Beat_HANDLER_HPP_
+#ifndef MESSAGE_HEART_BEAT_HANDLER_HPP_
+#define MESSAGE_HEART_BEAT_HANDLER_HPP_
 
-#include "stdlib.h"
 #include "MessageHeartBeat.hpp"
 
 namespace Protocol
